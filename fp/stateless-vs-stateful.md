@@ -1,22 +1,6 @@
----
-layout: standard
-mathjax: true
----
+# Stateful and Stateless
 
-# Functional Programming
-
-Normally, this would be the place to provide you with
-a clear definition of what functional programming entails.
-Well, to be perfectly honest, we're not really sure such a definition exists.
-In our experience, it seems that different people mean
-different things by it, but luckily,
-their different definitions do tend to revolve around
-the same core principles, which are
-
-* Stateless programming
-* Higher order functions
-
-## Stateful and Stateless
+## Algorithm Comparison
 
 Consider for example the two pieces of JavaScript code below,
 both of which reverse a list:
@@ -37,38 +21,38 @@ function reverse1(xs)
 ```javascript
 function reverse2(xs)
 {
-    if ( xs.length === 0 ) return [];
-    else
-    {
+    if ( xs.length === 0 ) { return []; }
+    else {
         const [ first, ...rest ] = xs;
         return [ ...reverse(rest), first ];
     }
 }
+
+// or, shorter
+
+const reverse2 = ([x, ...xs]) => x ? [...reverse2(xs), x] : [];
 ```
 
-One obvious difference between both approaches is that
-`reverse1` is an iterative algorithm, i.e., it relies on loops,
+One obvious difference between both approaches is
+the iterative nature of `reverse1`, i.e., it relies on loops,
 whereas `reverse2` is recursive. But that is not what we want to focus on.
 
 Another difference, one that matters more to the subject at hand,
 is that both algorithm actually perform slightly different tasks:
 
 * `reverse1` takes a list `xs` and *modifies* it.
+  It is hence written in an imperative style.
 * `reverse2` leaves its parameter unchanged and returns a *new* list.
-
-A *stateful* algorithm is one that performs modifications.
-Conversely, a *stateless* approach leaves everything untouched but instead returns a new
-value.
+  This makes it a functional algorithm.
 
 ## Stateless: Where Have I Seen It Before
 
-During your previous programming adventures, you've encountered
+During your prior programming adventures, you've encountered
 both stateful and stateless styles, perhaps without realizing it.
 
 For example, in most programming languages
-(e.g. Python, Java, C#, JavaScript, Ruby, ...), strings are stateless, or,
-if you prefer other terminology, strings are immutable, or unmodifiable.
-In essence, it simply means that strings cannot be modified in any way.
+(e.g. Python, Java, C#, JavaScript, Ruby, ...), strings are stateless,
+or immutable, which means that there is no way of modifying a string object.
 If you don't believe us, feel free to check out the documentation:
 
 * [Python](https://docs.python.org/3/library/stdtypes.html#string-methods)
@@ -87,8 +71,8 @@ print(s)
 ```
 
 This code prints `"Hello World"`. This is because `lower()` does not modify
-`s`, it simply returns a new string `"hello world"`. A correct version of the code above
-would be
+`s`, it simply returns a new string `"hello world"`.
+A correct version of the code above would be
 
 ```python
 # Python
@@ -100,9 +84,9 @@ print(s) # Prints "hello world"
 ## But Why Stateless
 
 You might wonder why strings have been made stateless. Clearly
-it consumes more memory! A stateful implementation would be much more memory efficient... right?
+it consumes more memory!
+A stateful implementation would be much more memory efficient... right?
 
-There are actually multiple situations where creating new strings is more efficient.
 Consider the following code:
 
 ```java
@@ -133,11 +117,11 @@ class Person
 }
 ```
 
-A `Person` has a `name`, which must not be empty, as enforced by `setName`.
-It is therefore `Person`s responsibility to "protect" `name`
-to ensure `name` stays valid.
+A `Person` has a `name` which must not be empty, as enforced by `setName`.
+It is therefore `Person`'s responsibility to "protect" `name`
+to ensure it stays valid.
 
-The code above is only correct is strings are immutable.
+The code above is only correct if strings are immutable.
 Imagine that `String` had a `clear()` method that would
 set the `String` object to `""`. We could then write
 
@@ -147,7 +131,7 @@ person.getName().clear();
 ```
 
 Due to the fact that `getName()` gives the caller direct access to the `Person`'s `name`,
-he would be able to change it, while `Person` being none the wiser. The only
+he would be able to change it, `Person` being none the wiser. The only
 safeguard against this would be to copy the string. Let's pretend `String` offers
 a `copy()` method, so that we can correct our code:
 
@@ -221,14 +205,16 @@ It might seem that as long as you don't act
 as if you want to break things on purpose, everything will be fine.
 However, this is a naive mindset: we can assure you it's all too easy
 to accidentally make a mistake, especially if you
-come back to some code you've written weeks or months ago.
-Before you know it, some part of your code modifies
-an object that's also being used by another, completely unrelated piece of code,
-leading it to misbehave. This kind of bug is infuriatingly hard to find and fix.
+come back to this code after a couple of weeks or months.
+Before you know it, two unrelated parts of your codebase
+share the same object. As soon as one part modifies this object,
+it would make the other part misbehave.
+This kind of bug is infuriatingly hard to find and fix,
+since the code that exhibits the faulty behavior might actually be correct.
 
 Now that we've rewritten `Person` so as to make copies of `name` everywhere,
 surely there is no way to surreptitiously change the `Person`'s name to
-an invalid value. Sorry to disappoint you...
+an invalid value? Sorry to disappoint you...
 
 ```java
 String name = "Martin";
@@ -238,7 +224,9 @@ Person person = new Person(name);
 
 If the timing is exactly right, it is possible that `name` is cleared
 between the moment it is checked and the moment it is copied.
-We fix this as follows:
+Run the code in `samples/person-race-condition` to see it in action.
+
+We can fix this as follows:
 
 ```java
 // Java
@@ -271,45 +259,16 @@ class Person
 ```
 
 You might think this is a bit far fetched and that the user is clearly asking for trouble,
-but keep in mind that in other situations, `Person` could be a more security related class
+but keep in mind that in some situations, `Person` could be a security sensitive class
 and that the user could be maliciously attempting to subvert the system's integrity.
 
 The above examples should convince you (at least a little bit) that immutable
 strings do simplify your life: you do not need to make sure you copy them everywhere
-at the right times, lest you want hard to track bugs to show up. Also note
+at the right times, lest you want hard to track bugs to pop up. Also note
 that immutable strings actually lead to more efficient code, since
-you do not need to constantly copy them.
+instead of having to copy them out of safety concerns, it is safe to reuse them.
 
-There's one more reason why stateless objects can be more efficient: it allows for object reuse.
-Say, for example, that you have a large string S from which you want to extract substrings.
-If strings were mutable/stateful, taking a substring would consist of copying the relevant
-part of S. However, the immutability of strings makes it possible to avoid this copying:
-instead, the substring object can simply keep a reference to S, together with
-the start and end index.
 
-```java
-class String
-{
-    private ImmutableStringData data;
-    private int startIndex;
-    private int endIndex;
-
-    private String(ImmutableStringData data, int startIndex, int endIndex)
-    {
-        this.data = data;
-        this.startIndex = startIndex;
-        this.endIndex = endIndex;
-    }
-
-    public String substring(int start, int end)
-    {
-        return new String(data, startIndex + start, startIndex + end);
-    }
-}
-```
-
-**TODO** Visualization
-
-* Safer: no copies needed
 * Reusing same
 * No sync
+* Hash keys
