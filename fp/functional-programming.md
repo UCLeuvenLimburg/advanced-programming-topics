@@ -5,6 +5,8 @@ mathjax: true
 
 # Functional Programming
 
+* Not a panacea, we do not advocate pure functional programming
+
 ## Theoretical Definition
 
 If we ask [Wikipedia](https://en.wikipedia.org/wiki/Functional_programming)

@@ -14,3 +14,7 @@ layout: default
   * Generators
   * Multiple Dynamic Dispatch
 * Git
+
+* Multiple languages
+  * Java streams come from Haskell
+  * Laziness, example of infinite set that takes no memory
