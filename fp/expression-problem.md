@@ -325,9 +325,9 @@ why this "controversial" approach is safe to use in
 functional programming languages.
 
 First, you need to know how hierarchies such as `Shape`
-are typically defined in functional languages.
+are typically defined in typical functional languages (Haskell, O'Caml, F#, ...)
 The concept has many names (tagged union, discriminated union,
-sum type, inductive type...) but at the core the idea is very simple:
+sum type, inductive type...) but at its core the idea is very simple:
 
 ```haskell
 data Shape = Circle Point2D Float
@@ -396,7 +396,7 @@ In summary:
 * OO groups code related to the same data together, allowing to add new types easily.
 * FP groups code related to the same functionality together, allowing to add new functions easily.
 
-## Solution to the Expression Problem
+## Solutions to the Expression Problem
 
 
 

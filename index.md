@@ -18,3 +18,9 @@ layout: default
 * Multiple languages
   * Java streams come from Haskell
   * Laziness, example of infinite set that takes no memory
+
+* Idiotic design, e.g. old Min/Max inheritance, preLoop, loop, postLoop
+
+* Concurrency
+  * Memory model
+  * Continuations/async
