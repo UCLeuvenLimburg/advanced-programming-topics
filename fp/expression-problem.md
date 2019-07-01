@@ -396,6 +396,49 @@ In summary:
 * OO groups code related to the same data together, allowing to add new types easily.
 * FP groups code related to the same functionality together, allowing to add new functions easily.
 
+## Why the FP Way is Acceptable
+
+A question left unanswered in the previous section is why it is
+okay to use the equivalent of `is`/`instanceof` in a functional language.
+
+Take the following `Shape` data type:
+
+```haskell
+data Shape = Circle Point2D Float
+           | Square Point2D Float
+           | Triangle [Point2D]
+```
+
+It expresses that there are three kinds of shapes: `Circle`, `Square` and `Triangle`.
+It also expresses the fact that these are the *only* shapes that exist.
+
+Compare this to an OO class hierarchy:
+
+```c#
+abstract class Shape { ... }
+class Circle : Shape { ... }
+class Square : Shape { ... }
+class Triangle : Shape { ... }
+```
+
+Here, it is still possible to add as many `Shape` subtypes. While this certainly
+gives flexibility to the programmer, it takes away information from the compiler:
+it cannot make assumptions about the number of possible `Shape` subtypes there will be,
+preventing it from checking and optimizing your code.
+
+Given the functional `Shape` definition above, the compiler can check your code
+for completeness:
+
+```haskell
+area (Circle center radius) = ...
+area (Square corner side)   = ...
+```
+
+Here, the compiler will notice that you only dealt with two out of three possible
+cases and warn you about it.
+Similarly, if you add an extra kind of shape, the compiler will point out
+all pieces of code that need an update.
+
 ## Solutions to the Expression Problem
 
 
