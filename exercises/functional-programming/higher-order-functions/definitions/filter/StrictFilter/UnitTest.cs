@@ -9,7 +9,7 @@ namespace StrictFilter
         [Fact]
         public void OnEmptyList()
         {
-            Check(Integers(), x => x >= 0, Integers());
+            Check(Integers(), x => true, Integers());
         }
 
         [Fact]
