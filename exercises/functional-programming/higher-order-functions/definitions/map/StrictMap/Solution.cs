@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace StrictMap
 {
-    public class Solution
+    public static class Solution
     {
         public static List<R> Map<T, R>(IList<T> xs, Func<T, R> f)
         {
