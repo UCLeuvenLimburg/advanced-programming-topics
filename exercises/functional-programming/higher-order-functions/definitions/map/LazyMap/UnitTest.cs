@@ -70,20 +70,6 @@ namespace LazyMap
             Assert.Equal(expected, actual);
         }
 
-        public static IEnumerable<object[]> Data
-        {
-            get
-            {
-                yield return TestCase<int, int>(Integers(), x => x, Integers());
-                yield return TestCase<int, int>(Integers(1), x => x, Integers());
-            }
-        }
-
-        private static object[] TestCase<T, R>(List<T> input, Func<T, R> f, List<T> expected)
-        {
-            return new object[] { input, f, expected };
-        }
-
         private static List<T> Values<T>(params T[] items)
         {
             return new List<T>(items);
