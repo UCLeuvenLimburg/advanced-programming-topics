@@ -5,6 +5,8 @@ layout: default
 
 [Functional Programming](functional-programming.md)
 
+* Purely informative, create your own opinion
+
 * Functional Programming
   * History
 * Concurrency
