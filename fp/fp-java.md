@@ -113,7 +113,9 @@ and `Tuple3<T1, T2, T3>` to hold three. It would
 make more sense to simply reuse the same name `Tuple`,
 e.g., `Tuple<T1, T2>` and `Tuple<T1, T2, T3>`,
 and have the number of type parameters determine
-which size the tuple has.
+which size the tuple has. However, type erasure makes this impossible:
+at runtime, there would be two `Tuple` classes, one
+with two fields, one with three.
 
 The fact that you need to use slightly different names
 might seem like a minor inconvenience, but
@@ -163,7 +165,7 @@ class SquaringFunction
 }
 ```
 
-We've now hardcoded a specific function. We can easily imagine other functions:
+We've now hard-coded a specific function. We can easily imagine other functions:
 
 ```java
 class IncrementingFunction
