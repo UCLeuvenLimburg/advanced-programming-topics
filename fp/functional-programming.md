@@ -2,7 +2,6 @@
 layout: standard
 mathjax: true
 ---
-
 # Functional Programming
 
 First of all, let me stress that I won't pretend functional programming

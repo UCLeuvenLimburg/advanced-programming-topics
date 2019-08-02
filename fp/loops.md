@@ -983,11 +983,19 @@ $ find -name "*.cs" | xargs cat | grep -e '^\s*//' | wc -l
 
 What about the recursion we talked about above? Surely you haven't forgotten about that.
 
-In order to use `Map`, `Select` and `Reduce`, they of course need to be defined.
-To define them using a functional style, we need recursion.
-Fortunately for you, in most languages, these functions are already defined, as well as many similar ones.
+In order to use `Map`, `Select` and `Reduce`, they of course need to be defined first.
+To define them using a functional style, it's been established we need recursion.
+Fortunately for you, in most languages, these functions are part of the library, as well as many similar ones.
+No need to implement them yourselves.
 
-Even if they were not already available, there's actually no real need to make their implementation functional.
+However, even if they were not already available, there's actually no real need to make their implementation functional.
 What matters is that, from the outside, they *appear* to be functional,
 meaning that if the implementation relies on state, this fact must
 remain hidden.
+
+Consider Haskell which enforces a purely functional style: you cannot
+cheat and hide some imperative stuff in your implementations,
+as there are no imperative building blocks whatsoever.  Yet, internally, Haskell must compile
+to machine code, which is imperative at its core. The point is
+that Haskell builds an abstraction layer above the machine level,
+one in which everything *appears* to be functional.
