@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
-using Tested = Exercise.Solution;
+using Tested = Exercise.Student;
 
 namespace Exercise
 {
