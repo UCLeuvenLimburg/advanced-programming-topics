@@ -2,8 +2,9 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
+using Tested = Exercise.Student;
 
-namespace Count
+namespace Exercise
 {
     public class UnitTest
     {
@@ -33,7 +34,7 @@ namespace Count
 
         private static void Check<T>(IEnumerable<T> input, Func<T, bool> predicate, int expected)
         {
-            var actual = Solution.Count<T>(input, predicate);
+            var actual = Tested.Count<T>(input, predicate);
 
             Assert.Equal(expected, actual);
         }
