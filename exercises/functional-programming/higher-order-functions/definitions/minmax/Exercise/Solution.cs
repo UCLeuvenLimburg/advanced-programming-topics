@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace MinMax
+namespace Exercise
 {
     public static class Solution
     {

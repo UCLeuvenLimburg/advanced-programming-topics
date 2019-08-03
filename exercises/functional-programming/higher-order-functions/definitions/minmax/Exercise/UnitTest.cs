@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
-using static MinMax.Solution;
+using static Exercise.Student;
 
 namespace Count
 {
