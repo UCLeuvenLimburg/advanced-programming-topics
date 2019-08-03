@@ -2,8 +2,9 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
+using Tested = Exercise.Student;
 
-namespace LazyMap
+namespace Exercise
 {
     public class UnitTest
     {
@@ -58,14 +59,14 @@ namespace LazyMap
 
         private static void Check<T, R>(IEnumerable<T> input, Func<T, R> f, IEnumerable<R> expected)
         {
-            var actual = Solution.Map<T, R>(input, f);
+            var actual = Tested.Map<T, R>(input, f);
 
             Assert.Equal(expected, actual);
         }
 
         private static void CheckInfinite<T, R>(IEnumerable<T> input, Func<T, R> f, List<R> expected)
         {
-            var actual = Solution.Map<T, R>(input, f).Take(expected.Count);
+            var actual = Tested.Map<T, R>(input, f).Take(expected.Count);
 
             Assert.Equal(expected, actual);
         }

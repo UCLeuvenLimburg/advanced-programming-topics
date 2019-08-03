@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LazyMap
+namespace Exercise
 {
     public static class Solution
     {

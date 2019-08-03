@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace StrictMap
+namespace Exercise
 {
     public static class Solution
     {

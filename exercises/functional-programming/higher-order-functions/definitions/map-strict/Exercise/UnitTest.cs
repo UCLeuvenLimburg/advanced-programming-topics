@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
+using Tested = Exercise.Student;
 
-namespace StrictMap
+namespace Exercise
 {
     public class UnitTest
     {
@@ -38,7 +39,7 @@ namespace StrictMap
 
         private static void Check<T, R>(List<T> input, Func<T, R> f, List<R> expected)
         {
-            var actual = Solution.Map<T, R>(input, f);
+            var actual = Tested.Map<T, R>(input, f);
 
             Assert.Equal(expected, actual);
         }
