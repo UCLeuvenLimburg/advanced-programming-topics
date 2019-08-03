@@ -1,8 +1,9 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
+using Tested = Exercise.Student;
 
-namespace StrictFilter
+namespace Exercise
 {
     public class UnitTest
     {
@@ -44,7 +45,7 @@ namespace StrictFilter
 
         private static void Check<T>(List<T> input, Func<T, bool> predicate, List<T> expected)
         {
-            var actual = Solution.Filter<T>(input, predicate);
+            var actual = Tested.Filter<T>(input, predicate);
 
             Assert.Equal(expected, actual);
         }

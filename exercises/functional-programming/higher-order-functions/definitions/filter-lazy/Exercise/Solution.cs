@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace LazyFilter
+namespace Exercise
 {
     public static class Solution
     {

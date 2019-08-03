@@ -2,8 +2,9 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
+using Tested = Exercise.Student;
 
-namespace LazyFilter
+namespace Exercise
 {
     public class UnitTest
     {
@@ -52,14 +53,14 @@ namespace LazyFilter
 
         private static void Check<T>(IEnumerable<T> input, Func<T, bool> predicate, IEnumerable<T> expected)
         {
-            var actual = Solution.Filter<T>(input, predicate);
+            var actual = Tested.Filter<T>(input, predicate);
 
             Assert.Equal(expected, actual);
         }
 
         private static void CheckInfinite<T>(IEnumerable<T> input, Func<T, bool> predicate, List<T> expected)
         {
-            var actual = Solution.Filter<T>(input, predicate).Take(expected.Count);
+            var actual = Tested.Filter<T>(input, predicate).Take(expected.Count);
 
             Assert.Equal(expected, actual);
         }
