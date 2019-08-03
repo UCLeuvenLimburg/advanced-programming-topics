@@ -2,10 +2,11 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
+using Tested = Exercise.Student;
 
-namespace Any
+namespace Exercise
 {
-    public class UnitTest
+    public class Exercise
     {
         [Fact]
         public void OnEmptyList()
@@ -82,7 +83,7 @@ namespace Any
 
         private static void Check<T>(IEnumerable<T> input, Func<T, bool> predicate, bool expected)
         {
-            var actual = Solution.Any<T>(input, predicate);
+            var actual = Tested.Any<T>(input, predicate);
 
             Assert.Equal(expected, actual);
         }
