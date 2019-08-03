@@ -2,8 +2,9 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
+using Tested = Exercise.Student;
 
-namespace All
+namespace Exercise
 {
     public class UnitTest
     {
@@ -64,7 +65,7 @@ namespace All
 
         private static void Check<T>(IEnumerable<T> input, Func<T, bool> predicate, bool expected)
         {
-            var actual = Solution.All<T>(input, predicate);
+            var actual = Tested.All<T>(input, predicate);
 
             Assert.Equal(expected, actual);
         }
