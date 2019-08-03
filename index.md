@@ -26,3 +26,6 @@ layout: default
 * Concurrency
   * Memory model
   * Continuations/async
+
+
+[Evaluation order](fp/evaluation-order.md)
