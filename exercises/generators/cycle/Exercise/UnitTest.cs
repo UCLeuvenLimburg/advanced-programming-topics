@@ -11,7 +11,7 @@ namespace Exercise
         [Fact]
         public void CycleSingletonList()
         {
-            var lst = new List<int> { 1 };
+            IEnumerable<int> lst = new List<int> { 1 };
             var actual = Tested.Cycle(lst);
             var expected = new List<int> { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         }
@@ -19,7 +19,7 @@ namespace Exercise
         [Fact]
         public void CycleListOf2()
         {
-            var lst = new List<int> { 1, 2 };
+            IEnumerable<int> lst = new List<int> { 1, 2 };
             var actual = Tested.Cycle(lst);
             var expected = new List<int> { 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2 };
         }
@@ -27,9 +27,17 @@ namespace Exercise
         [Fact]
         public void CycleListOf3()
         {
-            var lst = new List<string> { "a", "b", "c" };
+            IEnumerable<string> lst = new List<string> { "a", "b", "c" };
             var actual = Tested.Cycle(lst);
             var expected = new List<string> { "a", "b", "c", "a", "b", "c", "a", "b", "c", "a", "b", "c", "a", "b", "c", "a", "b", "c" };
+        }
+
+        [Fact]
+        public void CycleVeryLarge()
+        {
+            IEnumerable<int> lst = Enumerable.Range(0, int.MaxValue);
+            var actual = Tested.Cycle(lst);
+            var expected = lst.Take(100).ToList();
         }
 
         private void Check<T>(IEnumerable<T> actual, IList<T> expected)
