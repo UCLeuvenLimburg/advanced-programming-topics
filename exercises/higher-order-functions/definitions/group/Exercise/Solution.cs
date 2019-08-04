@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace Exercise
+namespace Exercise.Solution
 {
-    public static class Solution
+    public static class IEnumerableExtensions
     {
-        public static IDictionary<U, List<T>> Group<T, U>(IEnumerable<T> xs, Func<T, U> f)
+        public static IDictionary<U, List<T>> Group<T, U>(this IEnumerable<T> xs, Func<T, U> f)
         {
             var result = new Dictionary<U, List<T>>();
 

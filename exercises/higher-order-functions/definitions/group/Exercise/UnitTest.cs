@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
-using Tested = Exercise.Student;
+// using Exercise.Solution;
 
 namespace Exercise
 {
@@ -16,7 +16,7 @@ namespace Exercise
                 { 2, new List<int> { 52, 652 } },
                 { 5, new List<int> { 15, 95 } }
             };
-            var actual = Tested.Group(ns, n => n % 10);
+            var actual = ns.Group(n => n % 10);
 
             Assert.Equal(expected, actual);
         }
@@ -31,7 +31,7 @@ namespace Exercise
                 { 2, new List<string> { "bb", "pp" } },
                 { 3, new List<string> { "abc" } }
             };
-            var actual = Tested.Group(strings, s => s.Length);
+            var actual = strings.Group(s => s.Length);
 
             Assert.Equal(expected, actual);
         }
