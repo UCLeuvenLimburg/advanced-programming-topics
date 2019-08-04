@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace Exercise
+namespace Exercise.Solution
 {
-    public static class Solution
+    public static class IEnumerableExtensions
     {
-        public static Tuple<List<T>, List<T>> Partition<T>(IEnumerable<T> xs, Func<T, bool> predicate)
+        public static Tuple<List<T>, List<T>> Partition<T>(this IEnumerable<T> xs, Func<T, bool> predicate)
         {
             var left = new List<T>();
             var right = new List<T>();
