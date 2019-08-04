@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace Exercise
+namespace Exercise.Solution
 {
-    public static class Solution
+    public static class IEnumerableExtensions
     {
-        public static IEnumerable<T> Cycle<T>(IEnumerable<T> xs)
+        public static IEnumerable<T> Cycle<T>(this IEnumerable<T> xs)
         {
             while ( true )
             {

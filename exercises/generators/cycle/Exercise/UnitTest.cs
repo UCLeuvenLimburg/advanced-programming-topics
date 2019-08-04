@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
-using Tested = Exercise.Student;
+// using Exercise.Solution;
 
 namespace Exercise
 {
@@ -12,7 +12,7 @@ namespace Exercise
         public void CycleSingletonList()
         {
             IEnumerable<int> lst = new List<int> { 1 };
-            var actual = Tested.Cycle(lst);
+            var actual = lst.Cycle();
             var expected = new List<int> { 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 };
         }
 
@@ -20,7 +20,7 @@ namespace Exercise
         public void CycleListOf2()
         {
             IEnumerable<int> lst = new List<int> { 1, 2 };
-            var actual = Tested.Cycle(lst);
+            var actual = lst.Cycle();
             var expected = new List<int> { 1, 2, 1, 2, 1, 2, 1, 2, 1, 2, 1, 2 };
         }
 
@@ -28,7 +28,7 @@ namespace Exercise
         public void CycleListOf3()
         {
             IEnumerable<string> lst = new List<string> { "a", "b", "c" };
-            var actual = Tested.Cycle(lst);
+            var actual = lst.Cycle();
             var expected = new List<string> { "a", "b", "c", "a", "b", "c", "a", "b", "c", "a", "b", "c", "a", "b", "c", "a", "b", "c" };
         }
 
@@ -36,7 +36,7 @@ namespace Exercise
         public void CycleVeryLarge()
         {
             IEnumerable<int> lst = Enumerable.Range(0, int.MaxValue);
-            var actual = Tested.Cycle(lst);
+            var actual = lst.Cycle();
             var expected = lst.Take(100).ToList();
         }
 
