@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
-using Tested = Exercise.Student;
+// using Exercise.Solution;
 
 namespace Exercise
 {
@@ -59,14 +59,14 @@ namespace Exercise
 
         private static void Check<T, R>(IEnumerable<T> input, Func<T, R> f, IEnumerable<R> expected)
         {
-            var actual = Tested.Map<T, R>(input, f);
+            var actual = input.Map<T, R>(f);
 
             Assert.Equal(expected, actual);
         }
 
         private static void CheckInfinite<T, R>(IEnumerable<T> input, Func<T, R> f, List<R> expected)
         {
-            var actual = Tested.Map<T, R>(input, f).Take(expected.Count);
+            var actual = input.Map<T, R>(f).Take(expected.Count);
 
             Assert.Equal(expected, actual);
         }
