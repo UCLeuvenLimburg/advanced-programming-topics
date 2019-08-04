@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace Exercise
+namespace Exercise.Solution
 {
-    public static class Solution
+    public static class IEnumerableExtensions
     {
-        public static List<T> Filter<T>(IList<T> xs, Func<T, bool> predicate)
+        public static List<T> Filter<T>(this IList<T> xs, Func<T, bool> predicate)
         {
             var result = new List<T>();
 

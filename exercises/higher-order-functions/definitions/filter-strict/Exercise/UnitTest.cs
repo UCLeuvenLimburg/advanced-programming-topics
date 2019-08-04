@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
-using Tested = Exercise.Student;
+// using Exercise.Solution;
 
 namespace Exercise
 {
@@ -45,7 +45,7 @@ namespace Exercise
 
         private static void Check<T>(List<T> input, Func<T, bool> predicate, List<T> expected)
         {
-            var actual = Tested.Filter<T>(input, predicate);
+            var actual = input.Filter<T>(predicate);
 
             Assert.Equal(expected, actual);
         }
