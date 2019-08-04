@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
-using Tested = Exercise.Student;
+// using Exercise.Solution;
 
 namespace Exercise
 {
@@ -11,7 +11,7 @@ namespace Exercise
         [Fact]
         public void FindFirstGeq5()
         {
-            Assert.Equal(5, Tested.FindFirst(Enumerable.Range(0, int.MaxValue), k => k >= 5));
+            Assert.Equal(5, Enumerable.Range(0, int.MaxValue).FindFirst(k => k >= 5));
         }
 
         [Fact]
@@ -19,7 +19,7 @@ namespace Exercise
         {
             IEnumerable<string> strings = new string[] { "", "", "ab", "" };
 
-            Assert.Equal("ab", Tested.FindFirst(strings, s => s.Length > 0));
+            Assert.Equal("ab", strings.FindFirst(s => s.Length > 0));
         }
 
         [Fact]
@@ -27,7 +27,7 @@ namespace Exercise
         {
             IEnumerable<int> ns = new int[] { -1, 4, -2, 5, -4, 9, -1 };
 
-            Assert.Equal(4, Tested.FindFirst(ns, n => n > 0));
+            Assert.Equal(4, ns.FindFirst(n => n > 0));
         }
 
         [Fact]
@@ -35,7 +35,7 @@ namespace Exercise
         {
             IEnumerable<int> ns = new int[] { -1, 4, -2, 5, -4, 9, -1 };
 
-            Assert.Equal(9, Tested.FindLast(ns, n => n > 0));
+            Assert.Equal(9, ns.FindLast(n => n > 0));
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace Exercise
         {
             IEnumerable<int> ns = new int[] { -1, 4, -2, 5, -4, 9, -3 };
 
-            Assert.Equal(-3, Tested.FindLast(ns, n => n % 2 != 0));
+            Assert.Equal(-3, ns.FindLast(n => n % 2 != 0));
         }
 
         [Fact]
@@ -51,7 +51,7 @@ namespace Exercise
         {
             IEnumerable<int> ns = new int[] { -1, 4, -2, 5, -4, 9, -3 };
 
-            Assert.Equal(1, Tested.IndexOf(ns, n => n % 2 == 0));
+            Assert.Equal(1, ns.IndexOf(n => n % 2 == 0));
         }
 
         [Fact]
@@ -59,7 +59,7 @@ namespace Exercise
         {
             IEnumerable<string> strings = new string[] { "abc", "", "QJFJKLp", "FJLKJLA", "qio" };
 
-            Assert.Equal(3, Tested.IndexOf(strings, s => s.Length > 0 && s.ToUpper() == s));
+            Assert.Equal(3, strings.IndexOf(s => s.Length > 0 && s.ToUpper() == s));
         }
 
         [Fact]
@@ -67,7 +67,7 @@ namespace Exercise
         {
             IEnumerable<int> ns = new int[] { 1, 2, 3, 4, 5, 6 };
 
-            Assert.Throws<InvalidOperationException>(() => Tested.FindFirst(ns, n => n < 0));
+            Assert.Throws<InvalidOperationException>(() => ns.FindFirst(n => n < 0));
         }
 
         [Fact]
@@ -75,7 +75,7 @@ namespace Exercise
         {
             IEnumerable<int> ns = new int[] { 1, 2, 3, 4, 5, 6 };
 
-            Assert.Throws<InvalidOperationException>(() => Tested.IndexOf(ns, n => n < 0));
+            Assert.Throws<InvalidOperationException>(() => ns.IndexOf(n => n < 0));
         }
     }
 }
