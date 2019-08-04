@@ -1,8 +1,7 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using Xunit;
-using Tested = Exercise.Student;
+// using Exercise.Solution;
 
 namespace Exercise
 {
@@ -34,7 +33,7 @@ namespace Exercise
 
         private static void Check<T>(IEnumerable<T> input, Func<T, bool> predicate, int expected)
         {
-            var actual = Tested.Count<T>(input, predicate);
+            var actual = input.Count<T>(predicate);
 
             Assert.Equal(expected, actual);
         }
