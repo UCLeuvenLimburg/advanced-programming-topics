@@ -1,11 +1,11 @@
 using System;
 using System.Collections.Generic;
 
-namespace Exercise
+namespace Exercise.Solution
 {
-    public static class Solution
+    public static class IEnumerableExtensions
     {
-        public static List<R> Map<T, R>(IList<T> xs, Func<T, R> f)
+        public static List<R> Map<T, R>(this IEnumerable<T> xs, Func<T, R> f)
         {
             var result = new List<R>();
 

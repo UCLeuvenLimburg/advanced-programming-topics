@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Xunit;
-using Tested = Exercise.Student;
+// using Exercise.Solution;
 
 namespace Exercise
 {
@@ -39,7 +39,7 @@ namespace Exercise
 
         private static void Check<T, R>(List<T> input, Func<T, R> f, List<R> expected)
         {
-            var actual = Tested.Map<T, R>(input, f);
+            var actual = input.Map<T, R>( f);
 
             Assert.Equal(expected, actual);
         }
