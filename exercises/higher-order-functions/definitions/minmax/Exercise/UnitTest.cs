@@ -1,25 +1,30 @@
 using System;
-using System.Linq;
 using System.Collections.Generic;
 using Xunit;
-using static Exercise.Student;
+// using Exercise.Solution;
 
 namespace Count
 {
     public class UnitTest
     {
         [Fact]
-        public void MinimumOfComparable()
+        public void MinimumOfIntegers()
         {
-            Assert.Equal(1, Minimum(Integers(4, 1, 6, 5, 3, 7, 5)));
-            Assert.Equal(3, Minimum(Integers(4, 6, 5, 3, 7, 5)));
+            IEnumerable<int> ns = new int[] { 4, 1, 6, 5, 3, 7, 5 };
+            var expected = 1;
+            var actual = ns.Minimum();
+
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
-        public void MaximumOfComparable()
+        public void MaximumOfIntegers()
         {
-            Assert.Equal(7, Maximum(Integers(4, 1, 6, 5, 3, 7, 5)));
-            Assert.Equal(6, Maximum(Integers(4, 6, 1, 5, 3, 5)));
+            IEnumerable<int> ns = new int[] { 4, 1, 6, 5, 3, 7, 5 };
+            var expected = 7;
+            var actual = ns.Maximum();
+
+            Assert.Equal(expected, actual);
         }
 
         [Fact]
@@ -30,9 +35,9 @@ namespace Count
             var c = new Foo() { X = 5, Y = 5, Z = 2 };
             var d = new Foo() { X = 2, Y = 4, Z = 9 };
 
-            Assert.Same(d, Minimum(Values<Foo>(a, b, c, d), (x, y) => x.X < y.X));
-            Assert.Same(a, Minimum(Values<Foo>(a, b, c, d), (x, y) => x.Y < y.Y));
-            Assert.Same(b, Minimum(Values<Foo>(a, b, c, d), (x, y) => x.Z < y.Z));
+            Assert.Same(d, new Foo[] { a, b, c, d }.Minimum((x, y) => x.X < y.X));
+            Assert.Same(a, new Foo[] { b, c, a, d }.Minimum((x, y) => x.Y < y.Y));
+            Assert.Same(b, new Foo[] { d, a, c, b }.Minimum((x, y) => x.Z < y.Z));
         }
 
         [Fact]
@@ -43,9 +48,9 @@ namespace Count
             var c = new Foo() { X = 5, Y = 5, Z = 2 };
             var d = new Foo() { X = 2, Y = 4, Z = 9 };
 
-            Assert.Same(b, Maximum(Values<Foo>(a, b, c, d), (x, y) => x.X < y.X));
-            Assert.Same(c, Maximum(Values<Foo>(a, b, c, d), (x, y) => x.Y < y.Y));
-            Assert.Same(d, Maximum(Values<Foo>(a, b, c, d), (x, y) => x.Z < y.Z));
+            Assert.Same(b, new Foo[] { a, c, b, d }.Maximum((x, y) => x.X < y.X));
+            Assert.Same(c, new Foo[] { d, c, a, b }.Maximum((x, y) => x.Y < y.Y));
+            Assert.Same(d, new Foo[] { a, b, c, d }.Maximum((x, y) => x.Z < y.Z));
         }
 
         [Fact]
@@ -56,9 +61,9 @@ namespace Count
             var c = new Foo() { X = 5, Y = 5, Z = 2 };
             var d = new Foo() { X = 2, Y = 4, Z = 9 };
 
-            Assert.Same(d, Minimum(Values<Foo>(a, b, c, d), x => x.X));
-            Assert.Same(a, Minimum(Values<Foo>(a, b, c, d), x => x.Y));
-            Assert.Same(b, Minimum(Values<Foo>(a, b, c, d), x => x.Z));
+            Assert.Same(d, new Foo [] { a, b, c, d }.Minimum(x => x.X));
+            Assert.Same(a, new Foo [] { a, b, c, d }.Minimum(x => x.Y));
+            Assert.Same(b, new Foo [] { a, b, c, d }.Minimum(x => x.Z));
         }
 
         [Fact]
@@ -69,24 +74,9 @@ namespace Count
             var c = new Foo() { X = 5, Y = 5, Z = 2 };
             var d = new Foo() { X = 2, Y = 4, Z = 9 };
 
-            Assert.Same(b, Maximum(Values<Foo>(a, b, c, d), x => x.X));
-            Assert.Same(c, Maximum(Values<Foo>(a, b, c, d), x => x.Y));
-            Assert.Same(d, Maximum(Values<Foo>(a, b, c, d), x => x.Z));
-        }
-
-        private static List<T> Values<T>(params T[] items)
-        {
-            return new List<T>(items);
-        }
-
-        private static List<int> Integers(params int[] items)
-        {
-            return Values<int>(items);
-        }
-
-        private static List<string> Strings(params string[] items)
-        {
-            return Values<string>(items);
+            Assert.Same(b, new Foo[] { a, b, c, d }.Maximum(x => x.X));
+            Assert.Same(c, new Foo[] { a, b, c, d }.Maximum(x => x.Y));
+            Assert.Same(d, new Foo[] { a, b, c, d }.Maximum(x => x.Z));
         }
     }
 
