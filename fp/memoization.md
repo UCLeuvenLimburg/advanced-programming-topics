@@ -88,3 +88,18 @@ A possible execution goes as follows:
 * `is_prime` checks if `prime_table` contains an entry for `97`.
 * It does, so the `if`-body can skipped.
 * `is_prime` returns `prime_table[97]`, whose value has been computed the first time `is_prime(97)` was called.
+
+## Paradox
+
+The data structure in which prior results are stored (such as `prime_table` in the `is_prime` example)
+is clearly stateful. Did adding a stateful element to previously purely functional code somehow
+"taint" it? Has the optimization turned it imperative?
+
+On the one hand, the function is deterministic, so it enjoys many of the benefits of "real" functional code.
+On the other hand, it is not thread-safe: if multiple threads were to call `is_prime` at the same time,
+`prime_table` might get corrupted. This means it is possible to write code that reveals the presence of internal state,
+which makes it non-functional code.
+
+To conclude, whether you label something functional or imperative
+is irrelevant. What matters is that you understand the advantages and shortcomings
+of each approach.
