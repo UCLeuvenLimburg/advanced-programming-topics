@@ -6,7 +6,7 @@ namespace Exercise.Solution
 {
     public static class IEnumerableExtensions
     {
-        public static bool IsIncreasing(this IList<int> ns)
+        public static bool IsIncreasing(this IEnumerable<int> ns)
         {
             return ns.Zip(ns.Skip(1), (x, y) => x <= y).All(x => x);
         }
