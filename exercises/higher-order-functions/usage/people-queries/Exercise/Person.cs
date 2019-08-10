@@ -13,5 +13,7 @@ namespace Exercise
         public int Age { get; set; }
 
         public double Weight { get; set; }
+
+        public double Height { get; set; }
     }
 }

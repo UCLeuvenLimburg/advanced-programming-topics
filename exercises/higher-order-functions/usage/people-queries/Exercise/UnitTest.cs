@@ -83,5 +83,59 @@ namespace Exercise
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public void PersonWithAgeBetweenExists1()
+        {
+            IEnumerable<Person> people = new List<Person> {
+                new Person() { IsMale = true, Age = 41 },
+                new Person() { IsMale = false, Age = 99 },
+                new Person() { IsMale = true, Age = 5 },
+                new Person() { IsMale = false, Age = 12 },
+                new Person() { IsMale = true, Age = 25 },
+                new Person() { IsMale = false, Age = 54 },
+            };
+
+            var actual = Exercise.Solution.Queries.PersonWithAgeBetweenExists(people, 10, 15);
+            var expected = true;
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void PersonWithAgeBetweenExists2()
+        {
+            IEnumerable<Person> people = new List<Person> {
+                new Person() { IsMale = true, Age = 41 },
+                new Person() { IsMale = false, Age = 99 },
+                new Person() { IsMale = true, Age = 5 },
+                new Person() { IsMale = false, Age = 12 },
+                new Person() { IsMale = true, Age = 25 },
+                new Person() { IsMale = false, Age = 54 },
+            };
+
+            var actual = Exercise.Solution.Queries.PersonWithAgeBetweenExists(people, 20, 50);
+            var expected = true;
+
+            Assert.Equal(expected, actual);
+        }
+
+        [Fact]
+        public void PersonWithAgeBetweenExists3()
+        {
+            IEnumerable<Person> people = new List<Person> {
+                new Person() { IsMale = true, Age = 41 },
+                new Person() { IsMale = false, Age = 99 },
+                new Person() { IsMale = true, Age = 5 },
+                new Person() { IsMale = false, Age = 12 },
+                new Person() { IsMale = true, Age = 25 },
+                new Person() { IsMale = false, Age = 54 },
+            };
+
+            var actual = Exercise.Solution.Queries.PersonWithAgeBetweenExists(people, 30, 40);
+            var expected = false;
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

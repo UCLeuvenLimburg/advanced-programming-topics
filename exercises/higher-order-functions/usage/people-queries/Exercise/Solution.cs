@@ -52,5 +52,10 @@ namespace Exercise.Solution
         {
             return people.Where(p => p.IsMale).MaximumBy(p => p.Age);
         }
+
+        public static bool PersonWithAgeBetweenExists(IEnumerable<Person> people, int min, int max)
+        {
+            return people.Any(p => min <= p.Age && p.Age <= max);
+        }
     }
 }
