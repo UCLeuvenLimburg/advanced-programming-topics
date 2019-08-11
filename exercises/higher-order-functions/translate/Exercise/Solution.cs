@@ -11,5 +11,10 @@ namespace Functional.Solution
         {
             return movies.Count(m => m.Genres.Contains(Genre.Documentary));
         }
+
+        public static double F2(IEnumerable<Movie> movies, string director)
+        {
+            return movies.Where(m => m.Director == director).Select(m => m.Runtime).Average();
+        }
     }
 }
