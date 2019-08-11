@@ -164,5 +164,48 @@ namespace Exercise
                 Assert.Equal(expected, actual);
             }
         }
+
+        [Fact]
+        public void F4()
+        {
+            Check(new List<Movie>
+            {
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Year = 1999 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Year = 2000 },
+                new Movie() { Year = 2000 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Year = 2000 },
+                new Movie() { Year = 2001 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Year = 1968 },
+                new Movie() { Year = 1999 },
+                new Movie() { Year = 2010 },
+                new Movie() { Year = 1999 },
+                new Movie() { Year = 2011 },
+                new Movie() { Year = 1999 },
+                new Movie() { Year = 1968 },
+                new Movie() { Year = 1985 },
+                new Movie() { Year = 1968 },
+                new Movie() { Year = 1985 },
+            });
+
+            void Check(IEnumerable<Movie> movies)
+            {
+                var expected = I.F4(movies);
+                var actual = F.F4(movies);
+
+                Assert.Equal(expected, actual);
+            }
+        }
     }
 }

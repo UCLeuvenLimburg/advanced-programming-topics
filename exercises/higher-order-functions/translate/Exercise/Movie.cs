@@ -22,5 +22,7 @@ namespace Shared
         public ISet<Genre> Genres { get; set; }
 
         public string Director { get; set; }
+
+        public int Year { get; set; }
     }
 }

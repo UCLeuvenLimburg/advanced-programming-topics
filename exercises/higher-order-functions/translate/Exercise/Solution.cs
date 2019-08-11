@@ -21,5 +21,10 @@ namespace Functional.Solution
         {
             return movies.GroupBy(m => m.Director).ToDictionary(group => group.Key, group => group.OrderBy(m => m.Title).ToList());
         }
+
+        public static IDictionary<int, int> F4(IEnumerable<Movie> movies)
+        {
+            return movies.GroupBy(m => m.Year).ToDictionary(group => group.Key, group => group.Count());
+        }
     }
 }

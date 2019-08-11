@@ -59,5 +59,24 @@ namespace Imperative
 
             return result;
         }
+
+        public static IDictionary<int, int> F4(IEnumerable<Movie> movies)
+        {
+            var result = new Dictionary<int, int>();
+
+            foreach ( var movie in movies )
+            {
+                if ( !result.ContainsKey(movie.Year) )
+                {
+                    result[movie.Year] = 1;
+                }
+                else
+                {
+                    result[movie.Year] += 1;
+                }
+            }
+
+            return result;
+        }
     }
 }
