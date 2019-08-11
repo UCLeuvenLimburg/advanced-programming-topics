@@ -78,5 +78,35 @@ namespace Imperative
 
             return result;
         }
+
+        public static IEnumerable<string> F5(IEnumerable<Movie> movies, int n)
+        {
+            var table = new Dictionary<string, int>();
+
+            foreach ( var movie in movies )
+            {
+                if ( !table.ContainsKey(movie.Director))
+                {
+                    table[movie.Director] = 1;
+                }
+                else
+                {
+                    table[movie.Director] += 1;
+                }
+            }
+
+            var result = new List<string>();
+            foreach ( var pair in table )
+            {
+                if ( pair.Value >= n )
+                {
+                    result.Add(pair.Key);
+                }
+            }
+
+            result.Sort();
+
+            return result;
+        }
     }
 }

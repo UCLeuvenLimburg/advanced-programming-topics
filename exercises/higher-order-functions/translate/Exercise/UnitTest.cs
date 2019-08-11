@@ -207,5 +207,131 @@ namespace Exercise
                 Assert.Equal(expected, actual);
             }
         }
+
+        [Fact]
+        public void F5()
+        {
+            Check(new List<Movie> {
+            }, 0);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Casino" }
+            }, 0);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Casino" }
+            }, 1);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Casino" }
+            }, 2);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Goodfellas" },
+                new Movie() { Director=Scorsese, Title="Silence" },
+            }, 0);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Goodfellas" },
+                new Movie() { Director=Scorsese, Title="Silence" },
+            }, 1);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Goodfellas" },
+                new Movie() { Director=Scorsese, Title="Silence" },
+            }, 2);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Goodfellas" },
+                new Movie() { Director=Scorsese, Title="Silence" },
+            }, 3);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="The Departed" },
+                new Movie() { Director=Leone, Title="Once Upon A Time In America" },
+            }, 0);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="The Departed" },
+                new Movie() { Director=Leone, Title="Once Upon A Time In America" },
+            }, 1);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="The Departed" },
+                new Movie() { Director=Leone, Title="Once Upon A Time In America" },
+            }, 2);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Leone, Title="For A Fistful Of Dollars" },
+                new Movie() { Director=Scorsese, Title="Hugo" },
+                new Movie() { Director=PTA, Title="Punch Drunk Love" },
+                new Movie() { Director=PTA, Title="Magnolia" },
+                new Movie() { Director=Kubrick, Title="The Shining" },
+                new Movie() { Director=Leone, Title="For A Few Dollars More" },
+                new Movie() { Director=Kubrick, Title="2001 A Space Odyssey" },
+                new Movie() { Director=Scorsese, Title="Taxi Driver" },
+                new Movie() { Director=Kubrick, Title="Full Metal Jacket" },
+                new Movie() { Director=PTA, Title="There Will Be Blood" },
+                new Movie() { Director=Scorsese, Title="The Aviator" },
+                new Movie() { Director=PTA, Title="Phantom Thread" },
+                new Movie() { Director=Scorsese, Title="Shutter Island" },
+            }, 0);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Leone, Title="For A Fistful Of Dollars" },
+                new Movie() { Director=Scorsese, Title="Hugo" },
+                new Movie() { Director=PTA, Title="Punch Drunk Love" },
+                new Movie() { Director=PTA, Title="Magnolia" },
+                new Movie() { Director=Kubrick, Title="The Shining" },
+                new Movie() { Director=Leone, Title="For A Few Dollars More" },
+                new Movie() { Director=Kubrick, Title="2001 A Space Odyssey" },
+                new Movie() { Director=Scorsese, Title="Taxi Driver" },
+                new Movie() { Director=Kubrick, Title="Full Metal Jacket" },
+                new Movie() { Director=PTA, Title="There Will Be Blood" },
+                new Movie() { Director=Scorsese, Title="The Aviator" },
+                new Movie() { Director=PTA, Title="Phantom Thread" },
+                new Movie() { Director=Scorsese, Title="Shutter Island" },
+            }, 1);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Leone, Title="For A Fistful Of Dollars" },
+                new Movie() { Director=Scorsese, Title="Hugo" },
+                new Movie() { Director=PTA, Title="Punch Drunk Love" },
+                new Movie() { Director=PTA, Title="Magnolia" },
+                new Movie() { Director=Kubrick, Title="The Shining" },
+                new Movie() { Director=Leone, Title="For A Few Dollars More" },
+                new Movie() { Director=Kubrick, Title="2001 A Space Odyssey" },
+                new Movie() { Director=Scorsese, Title="Taxi Driver" },
+                new Movie() { Director=Kubrick, Title="Full Metal Jacket" },
+                new Movie() { Director=PTA, Title="There Will Be Blood" },
+                new Movie() { Director=Scorsese, Title="The Aviator" },
+                new Movie() { Director=PTA, Title="Phantom Thread" },
+                new Movie() { Director=Scorsese, Title="Shutter Island" },
+            }, 2);
+
+            Check(new List<Movie> {
+                new Movie() { Director=Leone, Title="For A Fistful Of Dollars" },
+                new Movie() { Director=Scorsese, Title="Hugo" },
+                new Movie() { Director=PTA, Title="Punch Drunk Love" },
+                new Movie() { Director=PTA, Title="Magnolia" },
+                new Movie() { Director=Kubrick, Title="The Shining" },
+                new Movie() { Director=Leone, Title="For A Few Dollars More" },
+                new Movie() { Director=Kubrick, Title="2001 A Space Odyssey" },
+                new Movie() { Director=Scorsese, Title="Taxi Driver" },
+                new Movie() { Director=Kubrick, Title="Full Metal Jacket" },
+                new Movie() { Director=PTA, Title="There Will Be Blood" },
+                new Movie() { Director=Scorsese, Title="The Aviator" },
+                new Movie() { Director=PTA, Title="Phantom Thread" },
+                new Movie() { Director=Scorsese, Title="Shutter Island" },
+            }, 3);
+
+            void Check(IEnumerable<Movie> movies, int n)
+            {
+                var expected = I.F5(movies, n);
+                var actual = F.F5(movies, n);
+
+                Assert.Equal(expected, actual);
+            }
+        }
     }
 }
