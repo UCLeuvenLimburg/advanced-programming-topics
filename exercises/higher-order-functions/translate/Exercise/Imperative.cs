@@ -6,18 +6,33 @@ namespace Imperative
 {
     public static class Functions
     {
-        public static IEnumerable<string> A(IEnumerable<Movie> movies)
+        public static int A0(IEnumerable<Movie> movies)
         {
-            var directories = new HashSet<string>();
+            var result = int.MinValue;
 
             foreach ( var movie in movies )
             {
-                directories.Add(movie.Director);
+                if ( movie.Runtime > result )
+                {
+                    result = movie.Runtime;
+                }
+            }
+
+            return result;
+        }
+
+        public static IEnumerable<string> A(IEnumerable<Movie> movies)
+        {
+            var directors = new HashSet<string>();
+
+            foreach ( var movie in movies )
+            {
+                directors.Add(movie.Director);
             }
 
             var result = new List<string>();
 
-            foreach ( var director in directories )
+            foreach ( var director in directors )
             {
                 result.Add(director);
             }

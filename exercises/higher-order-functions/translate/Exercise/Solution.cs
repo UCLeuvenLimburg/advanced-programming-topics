@@ -7,6 +7,11 @@ namespace Functional.Solution
 {
     public static class Functions
     {
+        public static int A0(IEnumerable<Movie> movies)
+        {
+            return movies.Select(m => m.Runtime).Max();
+        }
+
         public static IEnumerable<string> A(IEnumerable<Movie> movies)
         {
             return movies.Select(m => m.Director).Distinct().OrderBy(x => x);

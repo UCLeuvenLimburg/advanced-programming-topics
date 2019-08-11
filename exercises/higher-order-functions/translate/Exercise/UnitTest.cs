@@ -20,6 +20,54 @@ namespace Exercise
         public const string Kubrick = "Stanley Kubrick";
 
         [Fact]
+        public void A0()
+        {
+            Check(new List<Movie> {
+                new Movie() { Runtime = 165 }
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Runtime = 100 },
+                new Movie() { Runtime = 200 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Runtime = 100 },
+                new Movie() { Runtime = 240 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Runtime = 100 },
+                new Movie() { Runtime = 240 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Runtime = 200 },
+                new Movie() { Runtime = 150 },
+                new Movie() { Runtime = 90 },
+                new Movie() { Runtime = 200 },
+                new Movie() { Runtime = 120 },
+                new Movie() { Runtime = 180 },
+                new Movie() { Runtime = 140 },
+                new Movie() { Runtime = 100 },
+                new Movie() { Runtime = 200 },
+                new Movie() { Runtime = 180 },
+                new Movie() { Runtime = 60 },
+                new Movie() { Runtime = 150 },
+                new Movie() { Runtime = 200 },
+            });
+
+
+            void Check(IEnumerable<Movie> movies)
+            {
+                var expected = I.A0(movies);
+                var actual = F.A0(movies);
+
+                Assert.Equal(expected, actual);
+            }
+        }
+
+        [Fact]
         public void A()
         {
             Check(new List<Movie> { });
