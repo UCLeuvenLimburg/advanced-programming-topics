@@ -6,6 +6,27 @@ namespace Imperative
 {
     public static class Functions
     {
+        public static IEnumerable<string> A(IEnumerable<Movie> movies)
+        {
+            var directories = new HashSet<string>();
+
+            foreach ( var movie in movies )
+            {
+                directories.Add(movie.Director);
+            }
+
+            var result = new List<string>();
+
+            foreach ( var director in directories )
+            {
+                result.Add(director);
+            }
+
+            result.Sort();
+
+            return result;
+        }
+
         public static int F1(IEnumerable<Movie> movies)
         {
             var result = 0;

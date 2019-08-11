@@ -7,6 +7,11 @@ namespace Functional.Solution
 {
     public static class Functions
     {
+        public static IEnumerable<string> A(IEnumerable<Movie> movies)
+        {
+            return movies.Select(m => m.Director).Distinct().OrderBy(x => x);
+        }
+
         public static int F1(IEnumerable<Movie> movies)
         {
             return movies.Count(m => m.Genres.Contains(Genre.Documentary));

@@ -20,6 +20,56 @@ namespace Exercise
         public const string Kubrick = "Stanley Kubrick";
 
         [Fact]
+        public void A()
+        {
+            Check(new List<Movie> { });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese }
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese },
+                new Movie() { Director=Scorsese },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese },
+                new Movie() { Director=Leone },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese },
+                new Movie() { Director=Leone },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Leone },
+                new Movie() { Director=Scorsese },
+                new Movie() { Director=PTA },
+                new Movie() { Director=PTA },
+                new Movie() { Director=Kubrick },
+                new Movie() { Director=Leone },
+                new Movie() { Director=Kubrick },
+                new Movie() { Director=Scorsese },
+                new Movie() { Director=Kubrick },
+                new Movie() { Director=PTA },
+                new Movie() { Director=Scorsese },
+                new Movie() { Director=PTA },
+                new Movie() { Director=Scorsese },
+            });
+
+
+            void Check(IEnumerable<Movie> movies)
+            {
+                var expected = I.A(movies);
+                var actual = F.A(movies);
+
+                Assert.Equal(expected, actual);
+            }
+        }
+
+        [Fact]
         public void F1()
         {
             Check(new List<Movie> {
