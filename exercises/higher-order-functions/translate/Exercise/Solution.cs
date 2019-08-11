@@ -9,7 +9,17 @@ namespace Functional.Solution
     {
         public static int A0(IEnumerable<Movie> movies)
         {
-            return movies.Select(m => m.Runtime).Max();
+            return movies.Max(m => m.Runtime);
+        }
+
+        public static int A00(IEnumerable<Movie> movies)
+        {
+            return movies.Min(m => m.Runtime);
+        }
+
+        public static double B(IEnumerable<Movie> movies)
+        {
+            return movies.Max(m => m.Rating);
         }
 
         public static IEnumerable<string> A(IEnumerable<Movie> movies)

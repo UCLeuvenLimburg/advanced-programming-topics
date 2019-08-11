@@ -21,6 +21,36 @@ namespace Imperative
             return result;
         }
 
+        public static int A00(IEnumerable<Movie> movies)
+        {
+            var result = int.MaxValue;
+
+            foreach ( var movie in movies )
+            {
+                if ( movie.Runtime < result )
+                {
+                    result = movie.Runtime;
+                }
+            }
+
+            return result;
+        }
+
+        public static double B(IEnumerable<Movie> movies)
+        {
+            var result = double.NegativeInfinity;
+
+            foreach ( var movie in movies )
+            {
+                if ( movie.Rating > result )
+                {
+                    result = movie.Rating;
+                }
+            }
+
+            return result;
+        }
+
         public static IEnumerable<string> A(IEnumerable<Movie> movies)
         {
             var directors = new HashSet<string>();

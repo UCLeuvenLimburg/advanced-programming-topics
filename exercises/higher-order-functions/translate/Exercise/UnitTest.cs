@@ -68,6 +68,107 @@ namespace Exercise
         }
 
         [Fact]
+        public void A00()
+        {
+            Check(new List<Movie> {
+                new Movie() { Runtime = 165 }
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Runtime = 100 },
+                new Movie() { Runtime = 200 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Runtime = 100 },
+                new Movie() { Runtime = 240 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Runtime = 100 },
+                new Movie() { Runtime = 240 },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Runtime = 200 },
+                new Movie() { Runtime = 150 },
+                new Movie() { Runtime = 90 },
+                new Movie() { Runtime = 200 },
+                new Movie() { Runtime = 120 },
+                new Movie() { Runtime = 180 },
+                new Movie() { Runtime = 140 },
+                new Movie() { Runtime = 100 },
+                new Movie() { Runtime = 200 },
+                new Movie() { Runtime = 180 },
+                new Movie() { Runtime = 60 },
+                new Movie() { Runtime = 150 },
+                new Movie() { Runtime = 200 },
+            });
+
+
+            void Check(IEnumerable<Movie> movies)
+            {
+                var expected = I.A00(movies);
+                var actual = F.A00(movies);
+
+                Assert.Equal(expected, actual);
+            }
+        }
+
+        [Fact]
+        public void B()
+        {
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=8.1 }
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=8.1 },
+                new Movie() { Rating=9.2 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=9.2 },
+                new Movie() { Rating=8.1 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=9.2 },
+                new Movie() { Rating=9.5 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=9.2 },
+                new Movie() { Rating=9.9 },
+                new Movie() { Rating=8.7 },
+                new Movie() { Rating=9.5 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=9.2 },
+                new Movie() { Rating=9.9 },
+                new Movie() { Rating=7.1 },
+                new Movie() { Rating=8.7 },
+                new Movie() { Rating=9.5 },
+                new Movie() { Rating=9.8 },
+            });
+
+            void Check(IEnumerable<Movie> movies)
+            {
+                var expected = I.B(movies);
+                var actual = F.B(movies);
+
+                Assert.Equal(expected, actual);
+            }
+        }
+
+        [Fact]
         public void A()
         {
             Check(new List<Movie> { });
