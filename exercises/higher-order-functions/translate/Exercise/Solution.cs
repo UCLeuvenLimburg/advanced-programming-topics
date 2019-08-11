@@ -7,22 +7,27 @@ namespace Functional.Solution
 {
     public static class Functions
     {
-        public static int A0(IEnumerable<Movie> movies)
+        public static int Query1(IEnumerable<Movie> movies)
         {
             return movies.Max(m => m.Runtime);
         }
 
-        public static int A00(IEnumerable<Movie> movies)
+        public static int Query2(IEnumerable<Movie> movies)
         {
             return movies.Min(m => m.Runtime);
         }
 
-        public static double B(IEnumerable<Movie> movies)
+        public static double Query3(IEnumerable<Movie> movies)
         {
             return movies.Max(m => m.Rating);
         }
 
-        public static IEnumerable<string> A(IEnumerable<Movie> movies)
+        public static Movie Query4(IEnumerable<Movie> movies)
+        {
+            return movies.MaximumBy(m => m.Rating);
+        }
+
+        public static IEnumerable<string> Query5(IEnumerable<Movie> movies)
         {
             return movies.Select(m => m.Director).Distinct().OrderBy(x => x);
         }

@@ -20,7 +20,7 @@ namespace Exercise
         public const string Kubrick = "Stanley Kubrick";
 
         [Fact]
-        public void A0()
+        public void Query1()
         {
             Check(new List<Movie> {
                 new Movie() { Runtime = 165 }
@@ -60,15 +60,15 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies)
             {
-                var expected = I.A0(movies);
-                var actual = F.A0(movies);
+                var expected = I.Query1(movies);
+                var actual = F.Query1(movies);
 
                 Assert.Equal(expected, actual);
             }
         }
 
         [Fact]
-        public void A00()
+        public void Query2()
         {
             Check(new List<Movie> {
                 new Movie() { Runtime = 165 }
@@ -108,15 +108,15 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies)
             {
-                var expected = I.A00(movies);
-                var actual = F.A00(movies);
+                var expected = I.Query2(movies);
+                var actual = F.Query2(movies);
 
                 Assert.Equal(expected, actual);
             }
         }
 
         [Fact]
-        public void B()
+        public void Query3()
         {
             Check(new List<Movie>
             {
@@ -161,15 +161,68 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies)
             {
-                var expected = I.B(movies);
-                var actual = F.B(movies);
+                var expected = I.Query3(movies);
+                var actual = F.Query3(movies);
 
                 Assert.Equal(expected, actual);
             }
         }
 
         [Fact]
-        public void A()
+        public void Query4()
+        {
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=8.1 }
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=8.1 },
+                new Movie() { Rating=9.2 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=9.2 },
+                new Movie() { Rating=8.1 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=9.2 },
+                new Movie() { Rating=9.5 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=9.2 },
+                new Movie() { Rating=9.9 },
+                new Movie() { Rating=8.7 },
+                new Movie() { Rating=9.5 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Rating=9.2 },
+                new Movie() { Rating=9.9 },
+                new Movie() { Rating=7.1 },
+                new Movie() { Rating=8.7 },
+                new Movie() { Rating=9.5 },
+                new Movie() { Rating=9.8 },
+            });
+
+            void Check(IEnumerable<Movie> movies)
+            {
+                var expected = I.Query3(movies);
+                var actual = F.Query3(movies);
+
+                Assert.Equal(expected, actual);
+            }
+        }
+
+        [Fact]
+        public void Query5()
         {
             Check(new List<Movie> { });
 
@@ -211,8 +264,8 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies)
             {
-                var expected = I.A(movies);
-                var actual = F.A(movies);
+                var expected = I.Query5(movies);
+                var actual = F.Query5(movies);
 
                 Assert.Equal(expected, actual);
             }

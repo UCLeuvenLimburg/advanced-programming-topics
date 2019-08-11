@@ -6,7 +6,7 @@ namespace Imperative
 {
     public static class Functions
     {
-        public static int A0(IEnumerable<Movie> movies)
+        public static int Query1(IEnumerable<Movie> movies)
         {
             var result = int.MinValue;
 
@@ -21,7 +21,7 @@ namespace Imperative
             return result;
         }
 
-        public static int A00(IEnumerable<Movie> movies)
+        public static int Query2(IEnumerable<Movie> movies)
         {
             var result = int.MaxValue;
 
@@ -36,7 +36,7 @@ namespace Imperative
             return result;
         }
 
-        public static double B(IEnumerable<Movie> movies)
+        public static double Query3(IEnumerable<Movie> movies)
         {
             var result = double.NegativeInfinity;
 
@@ -51,7 +51,22 @@ namespace Imperative
             return result;
         }
 
-        public static IEnumerable<string> A(IEnumerable<Movie> movies)
+        public static Movie Query4(IEnumerable<Movie> movies)
+        {
+            Movie result = null;
+
+            foreach ( var movie in movies )
+            {
+                if ( result == null || movie.Rating > result.Rating )
+                {
+                    result = movie;
+                }
+            }
+
+            return result;
+        }
+
+        public static IEnumerable<string> Query5(IEnumerable<Movie> movies)
         {
             var directors = new HashSet<string>();
 
