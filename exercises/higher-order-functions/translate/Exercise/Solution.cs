@@ -32,37 +32,37 @@ namespace Functional.Solution
             return movies.Select(m => m.Director).Distinct().OrderBy(x => x);
         }
 
-        public static int F1(IEnumerable<Movie> movies)
+        public static int Query6(IEnumerable<Movie> movies)
         {
             return movies.Count(m => m.Genres.Contains(Genre.Documentary));
         }
 
-        public static double F2(IEnumerable<Movie> movies, string director)
+        public static double Query7(IEnumerable<Movie> movies, string director)
         {
             return movies.Where(m => m.Director == director).Select(m => m.Runtime).Average();
         }
 
-        public static IDictionary<string, List<Movie>> F3(IEnumerable<Movie> movies)
+        public static IDictionary<string, List<Movie>> Query8(IEnumerable<Movie> movies)
         {
             return movies.GroupBy(m => m.Director).ToDictionary(group => group.Key, group => group.OrderBy(m => m.Title).ToList());
         }
 
-        public static IDictionary<int, int> F4(IEnumerable<Movie> movies)
+        public static IDictionary<int, int> Query9(IEnumerable<Movie> movies)
         {
             return movies.GroupBy(m => m.Year).ToDictionary(group => group.Key, group => group.Count());
         }
 
-        public static IEnumerable<string> F5(IEnumerable<Movie> movies, int n)
+        public static IEnumerable<string> Query10(IEnumerable<Movie> movies, int n)
         {
             return movies.GroupBy(m => m.Director).Where(p => p.Count() >= n).Select(p => p.Key).OrderBy(x => x);
         }
 
-        public static IDictionary<string, Movie> F6(IEnumerable<Movie> movies)
+        public static IDictionary<string, Movie> Query11(IEnumerable<Movie> movies)
         {
             return movies.GroupBy(m => m.Director).ToDictionary(group => group.Key, group => group.MaximumBy(m => m.Rating));
         }
 
-        public static IEnumerable<string> F7(IEnumerable<Movie> movies, double n)
+        public static IEnumerable<string> Query12(IEnumerable<Movie> movies, double n)
         {
             return movies.Select(m => m.Director).Distinct().Where(d => movies.Where(m => m.Director == d).All(m => m.Rating >= n)).OrderBy(x => x);
         }

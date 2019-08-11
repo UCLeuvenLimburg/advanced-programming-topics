@@ -87,7 +87,7 @@ namespace Imperative
             return result;
         }
 
-        public static int F1(IEnumerable<Movie> movies)
+        public static int Query6(IEnumerable<Movie> movies)
         {
             var result = 0;
 
@@ -102,7 +102,7 @@ namespace Imperative
             return result;
         }
 
-        public static double F2(IEnumerable<Movie> movies, string director)
+        public static double Query7(IEnumerable<Movie> movies, string director)
         {
             double result = 0;
             var count = 0;
@@ -119,7 +119,7 @@ namespace Imperative
             return result / count;
         }
 
-        public static IDictionary<string, List<Movie>> F3(IEnumerable<Movie> movies)
+        public static IDictionary<string, List<Movie>> Query8(IEnumerable<Movie> movies)
         {
             var result = new Dictionary<string, List<Movie>>();
 
@@ -141,7 +141,7 @@ namespace Imperative
             return result;
         }
 
-        public static IDictionary<int, int> F4(IEnumerable<Movie> movies)
+        public static IDictionary<int, int> Query9(IEnumerable<Movie> movies)
         {
             var result = new Dictionary<int, int>();
 
@@ -160,7 +160,7 @@ namespace Imperative
             return result;
         }
 
-        public static IEnumerable<string> F5(IEnumerable<Movie> movies, int n)
+        public static IEnumerable<string> Query10(IEnumerable<Movie> movies, int n)
         {
             var table = new Dictionary<string, int>();
 
@@ -190,7 +190,7 @@ namespace Imperative
             return result;
         }
 
-        public static IDictionary<string, Movie> F6(IEnumerable<Movie> movies)
+        public static IDictionary<string, Movie> Query11(IEnumerable<Movie> movies)
         {
             var result = new Dictionary<string, Movie>();
 
@@ -209,7 +209,7 @@ namespace Imperative
             return result;
         }
 
-        public static IEnumerable<string> F7(IEnumerable<Movie> movies, double n)
+        public static IEnumerable<string> Query12(IEnumerable<Movie> movies, double n)
         {
             var directors = new HashSet<string>();
 

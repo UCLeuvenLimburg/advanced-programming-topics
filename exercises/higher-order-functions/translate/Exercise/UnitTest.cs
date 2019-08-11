@@ -272,7 +272,7 @@ namespace Exercise
         }
 
         [Fact]
-        public void F1()
+        public void Query6()
         {
             Check(new List<Movie> {
                 new Movie() { Genres = new HashSet<Genre> { Genre.Action } },
@@ -306,15 +306,15 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies)
             {
-                var expected = I.F1(movies);
-                var actual = F.F1(movies);
+                var expected = I.Query6(movies);
+                var actual = F.Query6(movies);
 
                 Assert.Equal(expected, actual);
             }
         }
 
         [Fact]
-        public void F2()
+        public void Query7()
         {
             Check(new List<Movie> {
                 new Movie() { Director=Scorsese, Runtime = 165 }
@@ -354,8 +354,8 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies, string director)
             {
-                var expected = I.F2(movies, director);
-                var actual = F.F2(movies, director);
+                var expected = I.Query7(movies, director);
+                var actual = F.Query7(movies, director);
 
                 Assert.Equal(expected, actual);
             }
@@ -370,7 +370,7 @@ namespace Exercise
         }
 
         [Fact]
-        public void F3()
+        public void Query8()
         {
             Check(new List<Movie> {
                 new Movie() { Director=Scorsese, Title="Casino" }
@@ -410,15 +410,15 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies)
             {
-                var expected = I.F3(movies);
-                var actual = F.F3(movies);
+                var expected = I.Query8(movies);
+                var actual = F.Query8(movies);
 
                 Assert.Equal(expected, actual);
             }
         }
 
         [Fact]
-        public void F4()
+        public void Query9()
         {
             Check(new List<Movie>
             {
@@ -453,15 +453,15 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies)
             {
-                var expected = I.F4(movies);
-                var actual = F.F4(movies);
+                var expected = I.Query9(movies);
+                var actual = F.Query9(movies);
 
                 Assert.Equal(expected, actual);
             }
         }
 
         [Fact]
-        public void F5()
+        public void Query10()
         {
             Check(new List<Movie>
             {
@@ -580,15 +580,15 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies, int n)
             {
-                var expected = I.F5(movies, n);
-                var actual = F.F5(movies, n);
+                var expected = I.Query10(movies, n);
+                var actual = F.Query10(movies, n);
 
                 Assert.Equal(expected, actual);
             }
         }
 
         [Fact]
-        public void F6()
+        public void Query11()
         {
             Check(new List<Movie> { });
 
@@ -635,15 +635,15 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies)
             {
-                var expected = I.F6(movies);
-                var actual = F.F6(movies);
+                var expected = I.Query11(movies);
+                var actual = F.Query11(movies);
 
                 Assert.Equal(expected, actual);
             }
         }
 
         [Fact]
-        public void F7()
+        public void Query12()
         {
             Check(new List<Movie> { }, 0);
 
@@ -688,8 +688,8 @@ namespace Exercise
 
             void Check(IEnumerable<Movie> movies, double n)
             {
-                var expected = I.F7(movies, n);
-                var actual = F.F7(movies, n);
+                var expected = I.Query12(movies, n);
+                var actual = F.Query12(movies, n);
 
                 Assert.Equal(expected, actual);
             }
