@@ -37,5 +37,27 @@ namespace Imperative
 
             return result / count;
         }
+
+        public static IDictionary<string, List<Movie>> F3(IEnumerable<Movie> movies)
+        {
+            var result = new Dictionary<string, List<Movie>>();
+
+            foreach ( var movie in movies )
+            {
+                if ( !result.ContainsKey(movie.Director) )
+                {
+                    result[movie.Director] = new List<Movie>();
+                }
+
+                result[movie.Director].Add(movie);
+            }
+
+            foreach ( var pair in result )
+            {
+                pair.Value.Sort((m1, m2) => m1.Title.CompareTo(m2.Title));
+            }
+
+            return result;
+        }
     }
 }

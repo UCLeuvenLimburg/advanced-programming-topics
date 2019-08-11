@@ -16,5 +16,10 @@ namespace Functional.Solution
         {
             return movies.Where(m => m.Director == director).Select(m => m.Runtime).Average();
         }
+
+        public static IDictionary<string, List<Movie>> F3(IEnumerable<Movie> movies)
+        {
+            return movies.GroupBy(m => m.Director).ToDictionary(group => group.Key, group => group.OrderBy(m => m.Title).ToList());
+        }
     }
 }

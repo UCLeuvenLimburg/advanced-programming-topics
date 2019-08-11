@@ -11,6 +11,14 @@ namespace Exercise
 {
     public class UnitTest
     {
+        public const string Scorsese = "Martin Scorsese";
+
+        public const string Leone = "Sergio Leone";
+
+        public const string PTA = "Paul Thomas Anderson";
+
+        public const string Kubrick = "Stanley Kubrick";
+
         [Fact]
         public void F1()
         {
@@ -56,45 +64,40 @@ namespace Exercise
         [Fact]
         public void F2()
         {
-            var scorsese = "Martin Scorsese";
-            var leone = "Sergio Leone";
-            var pta = "Paul Thomas Anderson";
-            var kubrick = "Stanley Kubrick";
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Runtime = 165 }
+            }, Scorsese);
 
             Check(new List<Movie> {
-                new Movie() { Director=scorsese, Runtime = 165 }
-            }, scorsese);
+                new Movie() { Director=Scorsese, Runtime = 100 },
+                new Movie() { Director=Scorsese, Runtime = 200 },
+            }, Scorsese);
 
             Check(new List<Movie> {
-                new Movie() { Director=scorsese, Runtime = 100 },
-                new Movie() { Director=scorsese, Runtime = 200 },
-            }, scorsese);
+                new Movie() { Director=Scorsese, Runtime = 100 },
+                new Movie() { Director=Leone, Runtime = 240 },
+            }, Scorsese);
 
             Check(new List<Movie> {
-                new Movie() { Director=scorsese, Runtime = 100 },
-                new Movie() { Director=leone, Runtime = 240 },
-            }, scorsese);
-
-            Check(new List<Movie> {
-                new Movie() { Director=scorsese, Runtime = 100 },
-                new Movie() { Director=leone, Runtime = 240 },
-            }, leone);
+                new Movie() { Director=Scorsese, Runtime = 100 },
+                new Movie() { Director=Leone, Runtime = 240 },
+            }, Leone);
 
             CheckMulti(new List<Movie> {
-                new Movie() { Director=leone, Runtime = 200 },
-                new Movie() { Director=scorsese, Runtime = 150 },
-                new Movie() { Director=pta, Runtime = 90 },
-                new Movie() { Director=pta, Runtime = 200 },
-                new Movie() { Director=kubrick, Runtime = 120 },
-                new Movie() { Director=leone, Runtime = 180 },
-                new Movie() { Director=kubrick, Runtime = 140 },
-                new Movie() { Director=scorsese, Runtime = 100 },
-                new Movie() { Director=kubrick, Runtime = 200 },
-                new Movie() { Director=pta, Runtime = 180 },
-                new Movie() { Director=scorsese, Runtime = 60 },
-                new Movie() { Director=pta, Runtime = 150 },
-                new Movie() { Director=scorsese, Runtime = 200 },
-            }, new List<string> { leone, scorsese, pta, kubrick });
+                new Movie() { Director=Leone, Runtime = 200 },
+                new Movie() { Director=Scorsese, Runtime = 150 },
+                new Movie() { Director=PTA, Runtime = 90 },
+                new Movie() { Director=PTA, Runtime = 200 },
+                new Movie() { Director=Kubrick, Runtime = 120 },
+                new Movie() { Director=Leone, Runtime = 180 },
+                new Movie() { Director=Kubrick, Runtime = 140 },
+                new Movie() { Director=Scorsese, Runtime = 100 },
+                new Movie() { Director=Kubrick, Runtime = 200 },
+                new Movie() { Director=PTA, Runtime = 180 },
+                new Movie() { Director=Scorsese, Runtime = 60 },
+                new Movie() { Director=PTA, Runtime = 150 },
+                new Movie() { Director=Scorsese, Runtime = 200 },
+            }, new List<string> { Leone, Scorsese, PTA, Kubrick });
 
 
             void Check(IEnumerable<Movie> movies, string director)
@@ -107,10 +110,58 @@ namespace Exercise
 
             void CheckMulti(IEnumerable<Movie> movies, IEnumerable<string> directors)
             {
-                foreach ( var director in directors )
+                foreach (var director in directors)
                 {
                     Check(movies, director);
                 }
+            }
+        }
+
+        [Fact]
+        public void F3()
+        {
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Casino" }
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="Goodfellas" },
+                new Movie() { Director=Scorsese, Title="Silence" },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="The Departed" },
+                new Movie() { Director=Leone, Title="Once Upon A Time In America" },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Scorsese, Title="The Last Temptation Of Christ" },
+                new Movie() { Director=Leone, Title="The Good, The Bad and The Ugly" },
+            });
+
+            Check(new List<Movie> {
+                new Movie() { Director=Leone, Title="For A Fistful Of Dollars" },
+                new Movie() { Director=Scorsese, Title="Hugo" },
+                new Movie() { Director=PTA, Title="Punch Drunk Love" },
+                new Movie() { Director=PTA, Title="Magnolia" },
+                new Movie() { Director=Kubrick, Title="The Shining" },
+                new Movie() { Director=Leone, Title="For A Few Dollars More" },
+                new Movie() { Director=Kubrick, Title="2001 A Space Odyssey" },
+                new Movie() { Director=Scorsese, Title="Taxi Driver" },
+                new Movie() { Director=Kubrick, Title="Full Metal Jacket" },
+                new Movie() { Director=PTA, Title="There Will Be Blood" },
+                new Movie() { Director=Scorsese, Title="The Aviator" },
+                new Movie() { Director=PTA, Title="Phantom Thread" },
+                new Movie() { Director=Scorsese, Title="Shutter Island" },
+            });
+
+
+            void Check(IEnumerable<Movie> movies)
+            {
+                var expected = I.F3(movies);
+                var actual = F.F3(movies);
+
+                Assert.Equal(expected, actual);
             }
         }
     }
