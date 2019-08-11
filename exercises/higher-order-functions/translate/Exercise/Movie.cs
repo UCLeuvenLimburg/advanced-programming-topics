@@ -24,5 +24,7 @@ namespace Shared
         public string Director { get; set; }
 
         public int Year { get; set; }
+
+        public double Rating { get; set; }
     }
 }

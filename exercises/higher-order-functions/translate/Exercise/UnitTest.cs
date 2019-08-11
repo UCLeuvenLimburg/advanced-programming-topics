@@ -211,7 +211,8 @@ namespace Exercise
         [Fact]
         public void F5()
         {
-            Check(new List<Movie> {
+            Check(new List<Movie>
+            {
             }, 0);
 
             Check(new List<Movie> {
@@ -329,6 +330,61 @@ namespace Exercise
             {
                 var expected = I.F5(movies, n);
                 var actual = F.F5(movies, n);
+
+                Assert.Equal(expected, actual);
+            }
+        }
+
+        [Fact]
+        public void F6()
+        {
+            Check(new List<Movie> { });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Director = Scorsese, Rating=8.1 }
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Director = Scorsese, Rating=8.1 },
+                new Movie() { Director = Scorsese, Rating=9.2 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Director = Scorsese, Rating=9.2 },
+                new Movie() { Director = Scorsese, Rating=8.1 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Director = Scorsese, Rating=9.2 },
+                new Movie() { Director = Leone, Rating=9.5 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Director = Scorsese, Rating=9.2 },
+                new Movie() { Director = Leone, Rating=9.9 },
+                new Movie() { Director = Scorsese, Rating=8.7 },
+                new Movie() { Director = Leone, Rating=9.5 },
+            });
+
+            Check(new List<Movie>
+            {
+                new Movie() { Director = Scorsese, Rating=9.2 },
+                new Movie() { Director = Leone, Rating=9.9 },
+                new Movie() { Director = Kubrick, Rating=7.1 },
+                new Movie() { Director = Scorsese, Rating=8.7 },
+                new Movie() { Director = Leone, Rating=9.5 },
+                new Movie() { Director = PTA, Rating=9.8 },
+            });
+
+            void Check(IEnumerable<Movie> movies)
+            {
+                var expected = I.F6(movies);
+                var actual = F.F6(movies);
 
                 Assert.Equal(expected, actual);
             }

@@ -108,5 +108,24 @@ namespace Imperative
 
             return result;
         }
+
+        public static IDictionary<string, Movie> F6(IEnumerable<Movie> movies)
+        {
+            var result = new Dictionary<string, Movie>();
+
+            foreach ( var movie in movies )
+            {
+                if ( !result.ContainsKey(movie.Director))
+                {
+                    result[movie.Director] = movie;
+                }
+                else if ( result[movie.Director].Rating < movie.Rating )
+                {
+                    result[movie.Director] = movie;
+                }
+            }
+
+            return result;
+        }
     }
 }

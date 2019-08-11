@@ -31,5 +31,36 @@ namespace Functional.Solution
         {
             return movies.GroupBy(m => m.Director).Where(p => p.Count() >= n).Select(p => p.Key).OrderBy(x => x);
         }
+
+        public static IDictionary<string, Movie> F6(IEnumerable<Movie> movies)
+        {
+            return movies.GroupBy(m => m.Director).ToDictionary(group => group.Key, group => group.MaximumBy(m => m.Rating));
+        }
+
+        public static T Maximum<T>(this IEnumerable<T> xs, Func<T, T, bool> lessThan)
+        {
+            var isFirst = true;
+            var result = default(T);
+
+            foreach ( var x in xs )
+            {
+                if ( isFirst )
+                {
+                    result = x;
+                    isFirst = false;
+                }
+                else if ( lessThan(result, x) )
+                {
+                    result = x;
+                }
+            }
+
+            return result;
+        }
+
+        public static T MaximumBy<T, K>(this IEnumerable<T> xs, Func<T, K> keyFunction) where K : IComparable<K>
+        {
+            return Maximum<T>(xs, (x, y) => keyFunction(x).CompareTo(keyFunction(y)) < 0);
+        }
     }
 }
