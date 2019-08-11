@@ -127,5 +127,38 @@ namespace Imperative
 
             return result;
         }
+
+        public static IEnumerable<string> F7(IEnumerable<Movie> movies, double n)
+        {
+            var directors = new HashSet<string>();
+
+            foreach ( var movie in movies )
+            {
+                directors.Add(movie.Director);
+            }
+
+            var result = new List<string>();
+            foreach ( var director in directors )
+            {
+                bool b = true;
+
+                foreach ( var movie in movies )
+                {
+                    if ( movie.Director == director && movie.Rating < n )
+                    {
+                        b = false;
+                    }
+                }
+
+                if ( b )
+                {
+                    result.Add(director);
+                }
+            }
+
+            result.Sort();
+
+            return result;
+        }
     }
 }

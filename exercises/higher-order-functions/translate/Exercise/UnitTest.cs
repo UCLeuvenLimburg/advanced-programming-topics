@@ -389,5 +389,58 @@ namespace Exercise
                 Assert.Equal(expected, actual);
             }
         }
+
+        [Fact]
+        public void F7()
+        {
+            Check(new List<Movie> { }, 0);
+
+            Check(new List<Movie> {
+                new Movie() { Director = Scorsese, Rating=8.7 },
+            }, 0);
+
+            Check(new List<Movie> {
+                new Movie() { Director = Scorsese, Rating=8.7 },
+            }, 9);
+
+            Check(new List<Movie> {
+                new Movie() { Director = Scorsese, Rating=8.7 },
+                new Movie() { Director = Scorsese, Rating=9.1 },
+            }, 9);
+
+            Check(new List<Movie> {
+                new Movie() { Director = Scorsese, Rating=9.2 },
+                new Movie() { Director = Scorsese, Rating=9.1 },
+            }, 9);
+
+            Check(new List<Movie> {
+                new Movie() { Director = Scorsese, Rating=9.2 },
+                new Movie() { Director = Scorsese, Rating=9.1 },
+                new Movie() { Director = Leone, Rating=9.1 },
+                new Movie() { Director = Leone, Rating=9.5 },
+            }, 9);
+
+            Check(new List<Movie> {
+                new Movie() { Director = Leone, Rating=9.5 },
+                new Movie() { Director = Leone, Rating=9.1 },
+                new Movie() { Director = Scorsese, Rating=9.2 },
+                new Movie() { Director = Scorsese, Rating=9.1 },
+            }, 9);
+
+            Check(new List<Movie> {
+                new Movie() { Director = Scorsese, Rating=8.9 },
+                new Movie() { Director = Scorsese, Rating=9.1 },
+                new Movie() { Director = Leone, Rating=9.4 },
+                new Movie() { Director = Leone, Rating=9.5 },
+            }, 9.2);
+
+            void Check(IEnumerable<Movie> movies, double n)
+            {
+                var expected = I.F7(movies, n);
+                var actual = F.F7(movies, n);
+
+                Assert.Equal(expected, actual);
+            }
+        }
     }
 }

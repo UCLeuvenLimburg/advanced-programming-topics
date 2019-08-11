@@ -37,19 +37,28 @@ namespace Functional.Solution
             return movies.GroupBy(m => m.Director).ToDictionary(group => group.Key, group => group.MaximumBy(m => m.Rating));
         }
 
+        public static IEnumerable<string> F7(IEnumerable<Movie> movies, double n)
+        {
+            return movies.Select(m => m.Director).Distinct().Where(d => movies.Where(m => m.Director == d).All(m => m.Rating >= n)).OrderBy(x => x);
+        }
+    }
+
+
+    public static class Extensions
+    {
         public static T Maximum<T>(this IEnumerable<T> xs, Func<T, T, bool> lessThan)
         {
             var isFirst = true;
             var result = default(T);
 
-            foreach ( var x in xs )
+            foreach (var x in xs)
             {
-                if ( isFirst )
+                if (isFirst)
                 {
                     result = x;
                     isFirst = false;
                 }
-                else if ( lessThan(result, x) )
+                else if (lessThan(result, x))
                 {
                     result = x;
                 }
