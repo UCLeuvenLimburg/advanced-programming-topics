@@ -5,7 +5,7 @@ using System.Linq;
 using Shared;
 using Xunit;
 using I = Imperative.Functions;
-using F = Functional.Solution.Functions;
+using F = Functional.Functions;
 
 namespace Exercise
 {
