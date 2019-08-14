@@ -710,3 +710,5 @@ Disclaimer: there may be a simpler way to implement `range`; you're welcome to l
 
 The implementation above first constructs an infinite stream containing `a`, `a+1`, `a+2`, ... Next, it is cut off after
 `b - a` elements. The `max` is necessary to deal with cases where `b - a < 0`.
+
+TODO Exercises
