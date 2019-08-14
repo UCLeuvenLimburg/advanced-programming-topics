@@ -301,7 +301,7 @@ Now it looks as if every operation like `Select` and `Map`
 needs its own specialized `IList<T>` implementation. This is certainly a viable
 approach and has certain advantages, but it's also a lot of work. Perhaps we can simplify things a bit.
 
-`IList<T>` is a relatively large interface: it counts 6 properties and 9 methods, all of
+`IList<T>` is a relatively large interface: it counts 3 properties and 7 methods, all of
 which need to be implemented by subtypes. But do we really need all this functionality?
 Enter `IEnumerable<T>`: this interface models a list with minimal functionality.
 It only has [a single member `GetEnumerator()`](https://docs.microsoft.com/en-us/dotnet/api/system.collections.ienumerable?view=netframework-4.8),
