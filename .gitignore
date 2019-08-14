@@ -1,3 +1,6 @@
+exercises/
+samples/
+
 ### VisualStudioCode ###
 .vscode/*
 !.vscode/settings.json
