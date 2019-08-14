@@ -637,33 +637,30 @@ To safeguard against such eventualities, you can introduce more statelessness:
 Python calls functions that lazily generate lists *generators*.
 
 ```python
-def foo():
-    yield 1
-    yield 2
-    yield 3
+def range(a, b):
+    while a < b:
+      yield a
+      a += 1
 
-for x in foo():
+for x in range(1, 10):
     print(x)
 ```
 
-prints
-
-```text
-1
-2
-3
-```
+prints all integers from `1` to `10` (exclusive). `range` is actually already built in, so there's
+no need to define it yourself.
 
 ## Generators in JavaScript
 
 In the same vein, JavaScript supports [generators](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/function*).
 
 ```javascript
-function* foo()
+function* range(a, b)
 {
-    yield 1;
-    yield 2;
-    yield 3;
+  while ( a < b )
+  {
+    yield a;
+    a += 1;
+  }
 }
 
 for ( const x of foo() )
@@ -699,4 +696,17 @@ function* bar()
 
 ## Streams in Java
 
-TODO
+Java provides no language support. Instead, it "fakes" it using `Stream` objects which provide
+methods to construct lazy lists. In general, this means that sacrifices have to be made syntax-wise.
+
+```java
+Stream<Integer> range(int a, int b)
+{
+    return Stream.iterate(a, (Integer k) -> k + 1).limit(Math.max(0, b - a));
+}
+```
+
+Disclaimer: there may be a simpler way to implement `range`; you're welcome to let me know and I'll update it correspondingly.
+
+The implementation above first constructs an infinite stream containing `a`, `a+1`, `a+2`, ... Next, it is cut off after
+`b - a` elements. The `max` is necessary to deal with cases where `b - a < 0`.
