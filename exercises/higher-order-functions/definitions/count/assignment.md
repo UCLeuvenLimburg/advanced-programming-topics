@@ -5,5 +5,5 @@ checks how many elements of `xs` satisfy `predicate`.
 
 ```csharp
 // Counts how many numbers are prime
-numbers.Count( IsPrime );
+new List<int>() { 1, 2, 3, 4, 5 }.Count( IsPrime ); // 3
 ```
