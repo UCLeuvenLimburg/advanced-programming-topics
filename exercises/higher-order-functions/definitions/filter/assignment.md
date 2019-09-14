@@ -5,5 +5,5 @@ returns a new list containing only those values of `xs` that satisfy `predicate`
 
 ```csharp
 // Retrieves the primes for numbers
-numbers.Filter( IsPrime );
+new List<int>() { 1, 2, 3, 4, 5 }.Filter( IsPrime ); // { 2, 3, 5 }
 ```
