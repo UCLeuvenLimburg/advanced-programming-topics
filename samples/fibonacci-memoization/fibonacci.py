@@ -21,6 +21,7 @@ def create_fast():
 
 fast = create_fast()
 
+print("Benchmarking... will take a few seconds")
 k = 10
 print(f"slow({k}) takes {timeit(f'slow({k})', globals=globals())} seconds")
 print(f"fast({k}) takes {timeit(f'fast({k})', globals=globals())} seconds")
