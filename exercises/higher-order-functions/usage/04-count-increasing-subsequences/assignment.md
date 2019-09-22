@@ -3,10 +3,17 @@
 Write an extension method
 
 ```csharp
-bool IsStepwise(this IEnumerable<int> ns)
+int CountIncreasingSubsequences(this IEnumerable<int> ns)
 ```
 
-that checks whether consecutive elements in `ns`
-differ at most by one. For example, `1 2 3` is
-stepwise, because there are no "jumps".
-Conversely, `1 2 4 5` contains a jump between `2` and `4`.
+that counts the number of increasing subsequences of `ns`.
+
+## Examples
+
+* `1 2 3 4` consists of a single increasing subsequence.
+* `1 2 3 1 2 3` consists of two increasing subsequences.
+* `1 2 1 2 1 2` consists of three increasing subsequences.
+* `5 6 4 5 2 3` consists of three increasing subsequences (`5 6`, `4 5` and `2 3`).
+* `5 4 3 2 1` consists of five increasing subsequences, all of length one.
+* `1` consists of a single increasing subsequence.
+* The empty sequence is also considered as a single increasing subsequence.
