@@ -53,6 +53,17 @@ Here's a list of topics that we can discuss during this course.
   * Efficiency
   * Static analysis
   * Extensibility
+* Language agnostic design
+  * Think in concepts, not language features
+  * Project concepts on language at hand
+  * Each language is a source of concepts
+* Type polymorphism
+* Subtype polymorphism
+  * Inheritance vs composition
+  * Interfaces
+* Critiqueing design
+  * Old Min/Max inheritance, preLoop, loop, postLoop
+  * Activity stuff
 
 ## Coq
 
@@ -61,6 +72,7 @@ if your code compiles, it is actually 100% correct.
 
 * What are type systems?
 * What are they used for?
+* New trend: unsound type systems (TypeScript, Python, ...)
 * Taking a look at standard type systems and a peek at "extreme" type systems, such as Coq's.
 * Software verification
 
@@ -118,3 +130,12 @@ How does garbage collection work exactly?
 * Dealing with cycles
 * C++ garbage collection (Boehm)
 * Different kinds of references
+
+## Concurrency
+
+* Memory model
+* Standard locking
+* Futures/Dataflow variables
+* Actor model
+* STM (Clojure)
+* Continuations/async
