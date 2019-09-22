@@ -2,7 +2,7 @@
 layout: standard
 mathjax: true
 ---
-# Functional Programming
+# Introduction to Functional Programming
 
 First of all, let me stress that I won't pretend functional programming
 is the ultimate panacea, the One True Way, the way *real* programmers do it.
