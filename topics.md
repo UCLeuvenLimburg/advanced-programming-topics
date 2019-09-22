@@ -64,6 +64,14 @@ Here's a list of topics that we can discuss during this course.
 * Critiqueing design
   * Old Min/Max inheritance, preLoop, loop, postLoop
   * Activity stuff
+* Why constructors are evil
+* Code vs Data
+  * Configuration files
+* Design examples
+  * Comparer hierarchy
+  * Projectweek DSL
+  * Rasterization
+  * Triangle generation (continuation based)
 
 ## Coq
 
@@ -135,6 +143,7 @@ How does garbage collection work exactly?
 
 * Memory model
 * Standard locking
+* Thread pools
 * Futures/Dataflow variables
 * Actor model
 * STM (Clojure)
