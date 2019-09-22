@@ -1,5 +1,7 @@
 exercises/
 samples/
+.mypy_cache/
+.vscode/
 
 ### VisualStudioCode ###
 .vscode/*
