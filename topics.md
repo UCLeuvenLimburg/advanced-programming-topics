@@ -148,3 +148,12 @@ How does garbage collection work exactly?
 * Actor model
 * STM (Clojure)
 * Continuations/async
+
+## Algorithms
+
+* Dynamic Programming
+* Searches
+  * Breadth first
+  * Depth first
+  * A*
+* Application on old VPW challenges
