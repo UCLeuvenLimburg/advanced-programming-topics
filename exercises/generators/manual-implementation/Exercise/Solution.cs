@@ -59,13 +59,13 @@ namespace Exercise.Solution
         }
     }
 
-    public class Selector<T> : IEnumerable<T>
+    public class Filter<T> : IEnumerable<T>
     {
         private readonly IEnumerable<T> originalData;
 
         private readonly Func<T, bool> predicate;
 
-        public Selector( IEnumerable<T> originalData, Func<T, bool> predicate )
+        public Filter( IEnumerable<T> originalData, Func<T, bool> predicate )
         {
             this.originalData = originalData;
             this.predicate = predicate;
@@ -90,7 +90,7 @@ namespace Exercise.Solution
             public Enumerator( IEnumerator<T> enumerator, Func<T, bool> predicate )
             {
                 this.enumerator = enumerator;
-                this.predicate = predicate;                
+                this.predicate = predicate;
             }
 
             public T Current => enumerator.Current;

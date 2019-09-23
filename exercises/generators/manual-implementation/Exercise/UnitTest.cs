@@ -57,11 +57,11 @@ namespace Exercise
         }
 
         [Fact]
-        public void Selector1()
+        public void Filter1()
         {
             var xs = Enumerable.Range( 1, 10000 );
             var expected = xs.Where( Predicate ).ToList();
-            var actual = new Selector<int>( xs, Predicate );
+            var actual = new Filter<int>( xs, Predicate );
 
             Check( actual, expected );
 
@@ -73,11 +73,11 @@ namespace Exercise
         }
 
         [Fact]
-        public void Selector2()
+        public void Filter2()
         {
             var xs = Enumerable.Range( 100, 10000 );
             var expected = xs.Where( Predicate ).ToList();
-            var actual = new Selector<int>( xs, Predicate );
+            var actual = new Filter<int>( xs, Predicate );
 
             Check( actual, expected );
 
@@ -89,11 +89,11 @@ namespace Exercise
         }
 
         [Fact]
-        public void Selector3()
+        public void Filter3()
         {
             var xs = Enumerable.Range( 100, 10000 );
             var expected = xs.Where( Predicate ).ToList();
-            var actual = new Selector<int>( xs, Predicate );
+            var actual = new Filter<int>( xs, Predicate );
 
             Check( actual, expected );
 
