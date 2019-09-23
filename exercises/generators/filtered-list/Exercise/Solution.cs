@@ -4,13 +4,13 @@ using System.Collections.Generic;
 
 namespace Exercise.Solution
 {
-    public class FilteredList<T> : IList<T>
+    public class FilteredView<T> : IList<T>
     {
         private readonly IList<T> originalData;
 
         private readonly Func<T, bool> predicate;
 
-        public FilteredList(IList<T> originalData, Func<T, bool> predicate)
+        public FilteredView(IList<T> originalData, Func<T, bool> predicate)
         {
             this.originalData = originalData;
             this.predicate = predicate;

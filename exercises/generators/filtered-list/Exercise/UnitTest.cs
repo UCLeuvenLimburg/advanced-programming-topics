@@ -2,7 +2,7 @@ using System;
 using System.Linq;
 using System.Collections.Generic;
 using Xunit;
-// using Exercise.Solution;
+using Exercise.Solution;
 
 namespace Exercise
 {
@@ -13,9 +13,9 @@ namespace Exercise
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).Count();
-            var actual = new FilteredList<int>( xs, Predicate ).Count;
+            var actual = new FilteredView<int>( xs, Predicate ).Count;
 
-            Assert.Equal( actual, expected );
+            Assert.Equal( expected, actual );
 
 
             bool Predicate( int x )
@@ -29,9 +29,28 @@ namespace Exercise
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).Count();
-            var actual = new FilteredList<int>( xs, Predicate ).Count;
+            var actual = new FilteredView<int>( xs, Predicate ).Count;
 
-            Assert.Equal( actual, expected );
+            Assert.Equal( expected, actual );
+
+
+            bool Predicate( int x )
+            {
+                return x % 17 < 7;
+            }
+        }
+
+        [Fact]
+        public void Count3()
+        {
+            var xs = Enumerable.Range( 0, 10000 ).ToList();
+            var FilteredView = new FilteredView<int>( xs, Predicate );
+            xs.Clear();
+
+            var actual = FilteredView.Count;
+            var expected = xs.Where( Predicate ).Count();
+
+            Assert.Equal( expected, actual );
 
 
             bool Predicate( int x )
@@ -45,7 +64,7 @@ namespace Exercise
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).ToList();
-            var actual = new FilteredList<int>( xs, Predicate );
+            var actual = new FilteredView<int>( xs, Predicate );
 
             Assert.Equal( Copy( actual ), expected );
 
@@ -61,7 +80,7 @@ namespace Exercise
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).ToList();
-            var actual = new FilteredList<int>( xs, Predicate );
+            var actual = new FilteredView<int>( xs, Predicate );
 
             Assert.Equal( Copy( actual ), expected );
 
@@ -76,7 +95,7 @@ namespace Exercise
         public void Add()
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
-            var actual = new FilteredList<int>( xs, Predicate );
+            var actual = new FilteredView<int>( xs, Predicate );
 
             Assert.Throws<InvalidOperationException>( () => actual.Add(1) );
 
@@ -91,7 +110,7 @@ namespace Exercise
         public void Clear()
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
-            var actual = new FilteredList<int>( xs, Predicate );
+            var actual = new FilteredView<int>( xs, Predicate );
 
             Assert.Throws<InvalidOperationException>( () => actual.Clear() );
 
@@ -106,7 +125,7 @@ namespace Exercise
         public void Remove()
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
-            var actual = new FilteredList<int>( xs, Predicate );
+            var actual = new FilteredView<int>( xs, Predicate );
 
             Assert.Throws<InvalidOperationException>( () => actual.Remove( 0 ) );
 
@@ -121,7 +140,7 @@ namespace Exercise
         public void RemoveAt()
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
-            var actual = new FilteredList<int>( xs, Predicate );
+            var actual = new FilteredView<int>( xs, Predicate );
 
             Assert.Throws<InvalidOperationException>( () => actual.RemoveAt( 0 ) );
 
@@ -138,7 +157,7 @@ namespace Exercise
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).ToArray();
             var actual = new int[expected.Length];
-            new FilteredList<int>( xs, Predicate ).CopyTo( actual, 0 );
+            new FilteredView<int>( xs, Predicate ).CopyTo( actual, 0 );
 
             Assert.Equal( expected, actual );
 
@@ -154,7 +173,7 @@ namespace Exercise
         {
             var ints = Enumerable.Range( 0, 10000 ).ToList();
             var xs = ints.Where( Predicate ).ToList();
-            var ys = new FilteredList<int>( ints, Predicate );
+            var ys = new FilteredView<int>( ints, Predicate );
 
             for ( int i = 0; i != 10000; ++i )
             {
