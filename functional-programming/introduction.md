@@ -17,7 +17,7 @@ very awkward or impractical, or you might think that there are clearly situation
 where it comes across as comically forced. And you might very well be right:
 in those cases one might  need to rely on imperative concepts.
 In this text, however, we will go "full functional", but in practice,
-you should know, [never go full functional](https://www.youtube.com/watch?v=X6WHBO_Qc-Q).
+you should probably [never go full functional](https://www.youtube.com/watch?v=X6WHBO_Qc-Q).
 
 ## Theoretical Definition
 

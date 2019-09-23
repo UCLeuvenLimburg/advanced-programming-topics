@@ -72,6 +72,7 @@ Here's a list of topics that we can discuss during this course.
   * Projectweek DSL
   * Rasterization
   * Triangle generation (continuation based)
+* Expression Problem
 
 ## Coq
 

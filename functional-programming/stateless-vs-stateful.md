@@ -47,6 +47,15 @@ is that both algorithms actually perform slightly different tasks:
 * `reverse2` leaves its parameter unchanged and returns a *new* list.
 
 `reverse1` is typical for imperative style, whereas `reverse2` is functional in nature.
+It is important to be aware of this distinction:
+
+* Ruby often offers both styles. As a visual help, Ruby has introduced
+  the convention that imperative methods should end on `!`. For example,
+  `xs.sort()` returns a new list, whereas `xs.sort!()` modifies `xs`.
+* Python offers two ways of sorting: `xs.sort()` sorts in place (i.e., imperative style),
+  while `sorted(xs)` returns a new list (functional). Note how the syntax
+  mirrors the programming styles: the OO-syntax vs the function application syntax.
+* In most other cases, you'll have to check the documentation or type signature to make sure.
 
 ## Stateless: Where Have I Seen It Before
 
@@ -56,7 +65,7 @@ both stateful and stateless styles, perhaps without realizing it.
 For example, in many imperative programming languages
 (e.g. Python, Java, C#, JavaScript, ...), strings are stateless/immutable,
 which means that there is no way of modifying a string object.
-If you don't believe us, feel free to check out the documentation:
+Feel free to check out the documentation:
 [Python](https://docs.python.org/3/library/stdtypes.html#string-methods),
 [Java](https://docs.oracle.com/javase/9/docs/api/java/lang/String.html),
 [C#](https://docs.microsoft.com/en-us/dotnet/api/system.string?view=netframework-4.8#methods),
@@ -82,15 +91,3 @@ s = "Hello World"
 s = s.lower()
 print(s) # Prints "hello world"
 ```
-
-## Advantages
-
-* [More robust encapsulation](encapsulation.md)
-* [Data structure efficiency](immutable-elements.md)
-
-
-* No loops
-* Reusing same
-* No sync
-* Hash keys
-* Expression problem

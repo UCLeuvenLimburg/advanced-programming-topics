@@ -187,7 +187,11 @@ but keep in mind that in some situations, `Person` could be a security sensitive
 and that the user could be maliciously attempting to subvert the system's integrity.
 
 The above examples should convince you (at least a little bit) that immutable
-strings do simplify your life: you do not need to make sure you copy them everywhere
-at the right times, lest you want hard to track bugs to pop up. Also note
-that immutable strings actually lead to more efficient code, since
-instead of having to copy them out of safety concerns, it is safe to reuse them.
+strings can simplify your life:
+
+* You do not need to make sure you copy them everywhere
+  at the right times, lest you want hard to track bugs to pop up.
+* In this example, immutable strings lead to more efficient code, since
+  instead of having to copy them out of safety concerns, it is safe to reuse them.
+* The straightforward/naive implementation in an imperative setting is dangerous,
+  whereas the functional approach does not require extra thought to be safe.

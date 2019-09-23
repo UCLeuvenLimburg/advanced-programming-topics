@@ -856,7 +856,44 @@ One way to interpret this version of `Reduce` is to view it as a "stepwise combi
 * It is again combined with `result`, yielding a new value for `result`.
 * This process is repeated until all elements of the list have been combined with `result`.
 
-TODO Find good example
+For example, consider a function that takes the decimal notation of a number and
+turns it into an `int`. Written using a loop, we get:
+
+```csharp
+int Parse(string str)
+{
+    int result = 0;
+
+    for ( var c in str )
+    {
+        var digit = c - '0';
+        result = result * 10 + digit;
+    }
+
+    return result;
+}
+```
+
+The loop does two things at once: it converts `char`s into digits (type `int`),
+and combines the digits into one number. We can divide this loop into its components: a `Map` followed by a `Reduce`.
+
+```csharp
+int Parse(string str)
+{
+    var digits = Map(str, c => c - '0');
+
+    return Reduce(0, digits, (acc, digit) => acc * 10 + digit);
+}
+```
+
+Or, making use of C#'s built-in functions instead of our own:
+
+```csharp
+int Parse(string str)
+{
+    return str.Select(c => c - '0').Aggregate(0, (acc, digit) => acc * 10 + digit);
+}
+```
 
 ## Final Version
 
