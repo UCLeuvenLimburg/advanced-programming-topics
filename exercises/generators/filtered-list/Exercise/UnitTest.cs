@@ -13,7 +13,7 @@ namespace Exercise
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).Count();
-            var actual = new SelectList<int>( xs, Predicate ).Count;
+            var actual = new FilteredList<int>( xs, Predicate ).Count;
 
             Assert.Equal( actual, expected );
 
@@ -29,7 +29,7 @@ namespace Exercise
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).Count();
-            var actual = new SelectList<int>( xs, Predicate ).Count;
+            var actual = new FilteredList<int>( xs, Predicate ).Count;
 
             Assert.Equal( actual, expected );
 
@@ -45,7 +45,7 @@ namespace Exercise
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).ToList();
-            var actual = new SelectList<int>( xs, Predicate );
+            var actual = new FilteredList<int>( xs, Predicate );
 
             Assert.Equal( Copy( actual ), expected );
 
@@ -61,7 +61,7 @@ namespace Exercise
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).ToList();
-            var actual = new SelectList<int>( xs, Predicate );
+            var actual = new FilteredList<int>( xs, Predicate );
 
             Assert.Equal( Copy( actual ), expected );
 
@@ -76,7 +76,7 @@ namespace Exercise
         public void Add()
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
-            var actual = new SelectList<int>( xs, Predicate );
+            var actual = new FilteredList<int>( xs, Predicate );
 
             Assert.Throws<InvalidOperationException>( () => actual.Add(1) );
 
@@ -91,7 +91,7 @@ namespace Exercise
         public void Clear()
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
-            var actual = new SelectList<int>( xs, Predicate );
+            var actual = new FilteredList<int>( xs, Predicate );
 
             Assert.Throws<InvalidOperationException>( () => actual.Clear() );
 
@@ -106,7 +106,7 @@ namespace Exercise
         public void Remove()
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
-            var actual = new SelectList<int>( xs, Predicate );
+            var actual = new FilteredList<int>( xs, Predicate );
 
             Assert.Throws<InvalidOperationException>( () => actual.Remove( 0 ) );
 
@@ -121,7 +121,7 @@ namespace Exercise
         public void RemoveAt()
         {
             var xs = Enumerable.Range( 0, 10000 ).ToList();
-            var actual = new SelectList<int>( xs, Predicate );
+            var actual = new FilteredList<int>( xs, Predicate );
 
             Assert.Throws<InvalidOperationException>( () => actual.RemoveAt( 0 ) );
 
@@ -138,7 +138,7 @@ namespace Exercise
             var xs = Enumerable.Range( 0, 10000 ).ToList();
             var expected = xs.Where( Predicate ).ToArray();
             var actual = new int[expected.Length];
-            new SelectList<int>( xs, Predicate ).CopyTo( actual, 0 );
+            new FilteredList<int>( xs, Predicate ).CopyTo( actual, 0 );
 
             Assert.Equal( expected, actual );
 
@@ -154,7 +154,7 @@ namespace Exercise
         {
             var ints = Enumerable.Range( 0, 10000 ).ToList();
             var xs = ints.Where( Predicate ).ToList();
-            var ys = new SelectList<int>( ints, Predicate );
+            var ys = new FilteredList<int>( ints, Predicate );
 
             for ( int i = 0; i != 10000; ++i )
             {
