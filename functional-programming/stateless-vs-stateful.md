@@ -55,6 +55,9 @@ It is important to be aware of this distinction:
 * Python offers two ways of sorting: `xs.sort()` sorts in place (i.e., imperative style),
   while `sorted(xs)` returns a new list (functional). Note how the syntax
   mirrors the programming styles: the OO-syntax vs the function application syntax.
+* In O'Caml, it is a mistake not to make use of a function's return value, meaning
+  you can't accidentally throw away the result. If you are truly not interested
+  in a function's return value, you need to ignore it explicitly using `ignore (function call)`.
 * In most other cases, you'll have to check the documentation or type signature to make sure.
 
 ## Stateless: Where Have I Seen It Before
