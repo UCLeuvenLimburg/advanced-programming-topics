@@ -5,7 +5,7 @@ layout: default
 
 Here's a list of topics that we can discuss during this course.
 
-## Git
+## Git (approved)
 
 * Internal structure of the Git repository
 * Using Git through shell
@@ -46,7 +46,7 @@ Here's a list of topics that we can discuss during this course.
   * `stash`
   * `tag`
 
-## Advanced Design Principles
+## Advanced Design Principles (40%)
 
 * How to judge a design
 * Design metrics
@@ -73,6 +73,8 @@ Here's a list of topics that we can discuss during this course.
   * Rasterization
   * Triangle generation (continuation based)
 * Expression Problem
+
+## Languages (40%)
 
 ## Coq
 
@@ -114,7 +116,7 @@ foundation, making it very elegant. Tim Sweeney (main developer of the
 Unreal Engine) described his own idea of the "next mainstream programming language"
 as a variant on Haskell.
 
-## Theoretical Underpinnings
+## Theoretical Underpinnings (5%)
 
 Short discussion about a couple of theoretical concepts.
 
@@ -122,7 +124,7 @@ Short discussion about a couple of theoretical concepts.
 * Undecidability
 * Turing Completeness
 
-## Garbage Collection
+## Garbage Collection (5%)
 
 How does garbage collection work exactly?
 
@@ -140,7 +142,7 @@ How does garbage collection work exactly?
 * C++ garbage collection (Boehm)
 * Different kinds of references
 
-## Concurrency
+## Concurrency (40%)
 
 * Memory model
 * Standard locking
@@ -150,7 +152,7 @@ How does garbage collection work exactly?
 * STM (Clojure)
 * Continuations/async
 
-## Algorithms
+## Algorithms (50%)
 
 * Dynamic Programming
 * Searches
@@ -158,3 +160,7 @@ How does garbage collection work exactly?
   * Depth first
   * A*
 * Application on old VPW challenges
+
+## Compilers
+
+* Compilers vs Interpreters
