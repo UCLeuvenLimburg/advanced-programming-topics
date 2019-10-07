@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Xunit;
 // using Exercise.Solution;
 
-namespace Count
+namespace Exercise
 {
     public class UnitTest
     {

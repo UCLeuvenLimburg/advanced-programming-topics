@@ -33,7 +33,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exercise", "07-partition\Ex
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08-reduce", "08-reduce", "{312BFF14-6D8C-4826-9D3D-FBB2C97EB04A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exericse", "08-reduce\Exericse\Exericse.csproj", "{3C14C7A2-9B25-46D1-9EBB-07706ADD64D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Exericse", "08-reduce\Exercise\Exercise.csproj", "{3C14C7A2-9B25-46D1-9EBB-07706ADD64D0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09-minmax", "09-minmax", "{84DEB572-98B8-47C1-B91A-749C3578D423}"
 EndProject
