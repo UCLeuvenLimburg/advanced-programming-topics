@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Xunit;
-// using Exercise.Solution;
+using Exercise.Solution;
 
 namespace Exercise
 {
@@ -21,7 +21,7 @@ namespace Exercise
             };
 
             var expected = new List<int> { 15, 29, 18, 38, 41 };
-            var actual = Exercise.Solution.Queries.Ages(people);
+            var actual = people.Ages();
 
             Assert.Equal(expected, actual);
         }
@@ -40,7 +40,7 @@ namespace Exercise
             };
 
             var expected = new List<Person> { people[1], people[4], people[6] };
-            var actual = Exercise.Solution.Queries.Women(people);
+            var actual = people.Women();
 
             Assert.Equal(expected, actual);
         }
@@ -59,7 +59,7 @@ namespace Exercise
             };
 
             var expected = 4;
-            var actual = Exercise.Solution.Queries.CountMen(people);
+            var actual = people.CountMen();
 
             Assert.Equal(expected, actual);
         }
@@ -79,7 +79,7 @@ namespace Exercise
                 new Person() { IsMale = false, Age = 54 },
             };
 
-            var actual = Exercise.Solution.Queries.OldestMan(people);
+            var actual = people.OldestMan();
 
             Assert.Equal(expected, actual);
         }
@@ -96,7 +96,7 @@ namespace Exercise
                 new Person() { IsMale = false, Age = 54 },
             };
 
-            var actual = Exercise.Solution.Queries.PersonWithAgeBetweenExists(people, 10, 15);
+            var actual = people.PersonWithAgeBetweenExists(10, 15);
             var expected = true;
 
             Assert.Equal(expected, actual);
@@ -114,7 +114,7 @@ namespace Exercise
                 new Person() { IsMale = false, Age = 54 },
             };
 
-            var actual = Exercise.Solution.Queries.PersonWithAgeBetweenExists(people, 20, 50);
+            var actual = people.PersonWithAgeBetweenExists(20, 50);
             var expected = true;
 
             Assert.Equal(expected, actual);
@@ -132,7 +132,7 @@ namespace Exercise
                 new Person() { IsMale = false, Age = 54 },
             };
 
-            var actual = Exercise.Solution.Queries.PersonWithAgeBetweenExists(people, 30, 40);
+            var actual = people.PersonWithAgeBetweenExists(30, 40);
             var expected = false;
 
             Assert.Equal(expected, actual);

@@ -7,19 +7,29 @@ namespace Exercise.Solution
 {
     public static class Queries
     {
-        public static IEnumerable<int> Ages(IEnumerable<Person> people)
+        public static IEnumerable<int> Ages(this IEnumerable<Person> people)
         {
             return people.Select(p => p.Age);
         }
 
-        public static IEnumerable<Person> Women(IEnumerable<Person> people)
+        public static IEnumerable<Person> Women(this IEnumerable<Person> people)
         {
             return people.Where(p => !p.IsMale);
         }
 
-        public static int CountMen(IEnumerable<Person> people)
+        public static int CountMen(this IEnumerable<Person> people)
         {
             return people.Count(p => p.IsMale);
+        }
+
+        public static Person OldestMan(this IEnumerable<Person> people)
+        {
+            return people.Where(p => p.IsMale).MaximumBy(p => p.Age);
+        }
+
+        public static bool PersonWithAgeBetweenExists(this IEnumerable<Person> people, int min, int max)
+        {
+            return people.Any(p => min <= p.Age && p.Age <= max);
         }
 
         public static T Maximum<T>(this IEnumerable<T> xs, Func<T, T, bool> lessThan)
@@ -46,16 +56,6 @@ namespace Exercise.Solution
         public static T MaximumBy<T, K>(this IEnumerable<T> xs, Func<T, K> keyFunction) where K : IComparable<K>
         {
             return Maximum<T>(xs, (x, y) => keyFunction(x).CompareTo(keyFunction(y)) < 0);
-        }
-
-        public static Person OldestMan(IEnumerable<Person> people)
-        {
-            return people.Where(p => p.IsMale).MaximumBy(p => p.Age);
-        }
-
-        public static bool PersonWithAgeBetweenExists(IEnumerable<Person> people, int min, int max)
-        {
-            return people.Any(p => min <= p.Age && p.Age <= max);
         }
     }
 }
