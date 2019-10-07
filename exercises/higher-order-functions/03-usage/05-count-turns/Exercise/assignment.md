@@ -10,7 +10,6 @@ that counts the number of "turns" the sequence `ns` takes.
 A turn is a point where an increasing subsequence turns
 into a decreasing subsequence or vice versa.
 
-
 ## Examples
 
 * `1 2 3 4` consists of a single increasing subsequence: zero turns.
