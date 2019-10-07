@@ -14,4 +14,3 @@ This function operates as follows:
 * ...
 * It combines the last element of `xs` with `acc` using `f`, which yields the final value for `acc`.
 * It returns `acc`.
-

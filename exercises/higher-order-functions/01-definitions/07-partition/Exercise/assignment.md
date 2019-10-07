@@ -6,7 +6,7 @@ Write an extension method with signature
 Tuple<List<T>, List<T>> Partition<T>(this IEnumerable<T> xs, Func<T, bool> predicate)
 ```
 
-The funcion returns two lists:
+The function returns two lists:
 
 * A list of items of `xs` for which `predicate` returns `true`.
 * A list of items of `xs` for which `predicate` returns `false`.
