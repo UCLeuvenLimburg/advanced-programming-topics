@@ -10,4 +10,3 @@
 
 * Using a shell, navigate to the exercise's `Exercise` directory.
 * Run `dotnet test`.
-
