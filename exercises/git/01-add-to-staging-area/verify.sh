@@ -3,9 +3,9 @@
 pushd sandbox > /dev/null
 
 if [[ $(git ls-files | grep a.txt) ]]; then
-  echo "ok"
+  echo ok
 else
-  echo "fail"
+  echo fail
 fi
 
 popd > /dev/null
