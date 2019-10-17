@@ -3,9 +3,9 @@
 pushd sandbox > /dev/null
 
 if [ -f ampharos.txt ]; then
-  echo "ok"
+  echo ok
 else
-  echo "fail"
+  echo fail
 fi
 
 popd > /dev/null
