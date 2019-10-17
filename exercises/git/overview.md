@@ -6,7 +6,7 @@ Proceed as follows to solve the exercises:
 * Run `source setup.sh`. This script sets up the git repositories required for the exercise. All files will reside under the directory named `sandbox`.
 * Read the assignment.
 * Go inside `sandbox` and perform the necessary steps.
-* Back outside `sandbox`, run `source verify.sh`. This script checks whether you satisfy the conditions demanded by the exercise.
+* Back outside `sandbox`, run `source verify.sh`. This script checks whether you satisfy the conditions demanded by the exercise. Note that not all exercises have a verification step.
 
 If things go wrong, you can always rerun `source setup.sh`: it will delete all exercise related files and rebuild them from scratch.
 
