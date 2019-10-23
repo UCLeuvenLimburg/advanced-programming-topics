@@ -14,3 +14,4 @@ If things go wrong, you can always rerun `source setup.sh`: it will delete all e
 
 * [Pro Git](https://git-scm.com/book/en/v2): free online book (chapters 2 and 3 strongly recommended)
 * [Reference](https://git-scm.com/docs)
+* [gitignore.io](https://gitignore.io)
