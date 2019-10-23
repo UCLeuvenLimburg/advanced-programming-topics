@@ -8,8 +8,8 @@ elif [[ ! $(git branch | grep master) ]]; then
   echo fail: missing master branch
 elif [[ ! $(git branch | grep sidetrack) ]]; then
   echo fail: missing sidetrack branch
-elif [[ $(git rev-parse sidetrack~1) != master ]]; then
-  echo fail: sidetrack should be one ahead of master
+elif [[ $(git rev-parse sidetrack~1) != $(git rev-parse master~1) ]]; then
+  echo fail: master and sidetrack should share ancestor
 else
   echo ok
 fi
