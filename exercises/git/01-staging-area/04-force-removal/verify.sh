@@ -4,12 +4,10 @@ pushd sandbox > /dev/null
 
 if [ -f file.txt ]; then
   echo fail: file.txt still present in working area
+elif [[ $(git ls-files) ]]; then
+  echo fail: file still in staging area
 else
-  if [[ $(git ls-files) ]]; then
-    echo fail: file still in staging area
-  else
-    echo ok
-  fi
+  echo ok
 fi
 
 popd > /dev/null
