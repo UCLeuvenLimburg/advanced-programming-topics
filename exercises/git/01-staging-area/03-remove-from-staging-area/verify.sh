@@ -2,14 +2,12 @@
 
 pushd sandbox > /dev/null
 
-if [ -f password.txt ]; then
-  if [[ $(git ls-files | grep password.txt) ]]; then
-    echo fail: file still in staging area
-  else
-    echo ok
-  fi
+if [ ! -f password.txt ]; then
+  echo fail: password.txt not present in working area
+elif [[ $(git ls-files | grep password.txt) ]]; then
+  echo fail: password.txt still in staging area
 else
-  echo fail: file removed from working area
+  echo ok
 fi
 
 popd > /dev/null
