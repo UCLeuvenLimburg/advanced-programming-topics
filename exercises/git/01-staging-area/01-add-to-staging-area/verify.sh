@@ -2,10 +2,10 @@
 
 pushd sandbox > /dev/null
 
-if [[ $(git ls-files | grep a.txt) ]]; then
-  echo ok
-else
+if [[ ! $(git ls-files | grep a.txt) ]]; then
   echo fail
+else
+  echo ok
 fi
 
 popd > /dev/null
