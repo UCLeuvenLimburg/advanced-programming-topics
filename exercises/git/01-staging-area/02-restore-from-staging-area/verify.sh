@@ -2,10 +2,10 @@
 
 pushd sandbox > /dev/null
 
-if [ -f ampharos.txt ]; then
-  echo ok
+if [ ! -f ampharos.txt ]; then
+  echo fail: file ampharos.txt not found
 else
-  echo fail
+  echo ok
 fi
 
 popd > /dev/null
