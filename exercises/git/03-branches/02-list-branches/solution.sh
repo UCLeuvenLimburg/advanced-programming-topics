@@ -2,7 +2,7 @@
 
 pushd sandbox
 
-BRANCH=$(git branch | sort | tail -n 1)
-echo $BRANCH
+git branch
+git checkout sycamore
 
 popd
