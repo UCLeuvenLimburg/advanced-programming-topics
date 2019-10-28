@@ -9,6 +9,14 @@ you from accidentally removing modified files.
 * It was added to the staging area.
 * `file.txt` was modified (in the working area).
 
+```text
+--------------------
+      file.txt        STAGING
+--------------------
+      file.txt*       WORKING
+--------------------
+```
+
 ## Task
 
 Try removing the file using `git rm` without any additional flags.
