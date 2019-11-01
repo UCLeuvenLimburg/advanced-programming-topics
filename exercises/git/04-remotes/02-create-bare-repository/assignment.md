@@ -1,3 +1,7 @@
 # Assignment
 
-Let's start by creating a regular repository. Have git initialize a brand new repository under `sandbox/local`.
+Our intention is to have both a local and remote repository, both
+stored on your drive. ()
+
+Under `sandbox`, initialize a new repository in a directory `local`.
+Also create a new *bare* repository in a directory `remote`.
