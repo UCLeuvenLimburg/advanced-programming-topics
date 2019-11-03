@@ -1,7 +1,5 @@
 # Assignment
 
-## Before
-
 * A file was created in the working area.
 * It was copied to the staging area.
 * The file was then accidentally removed from the working area.
