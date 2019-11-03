@@ -1,3 +1,4 @@
 # Assignment
 
-Let's start by creating a regular repository. Have git initialize a brand new repository under `sandbox/local`.
+Instead of cloning a repo, you can also create a brand new one.
+Have git initialize a new repository under `sandbox/local`.
