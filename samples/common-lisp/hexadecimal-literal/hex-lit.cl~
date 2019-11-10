@@ -1,0 +1,11 @@
+(defun parse-hexadecimal (str)
+  (reduce (lambda (acc x)
+	    (+ (* 16 acc) (position x "0123456789ABCDEF")))
+	  str
+	  :initial-value 0))
+
+(defun read-hexadecimal (stream char)
+  (declare (ignore char))
+  (parse-hexadecimal (format nil "~A" (read stream))))
+
+(set-macro-character #\x #'read-hexadecimal)
