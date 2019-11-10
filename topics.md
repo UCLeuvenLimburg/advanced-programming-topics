@@ -87,10 +87,27 @@ if your code compiles, it is actually 100% correct.
 * Taking a look at standard type systems and a peek at "extreme" type systems, such as Coq's.
 * Software verification
 
+## Python
+
+* Context managers
+* Decorators
+
 ## Common Lisp
 
 Common Lisp is an extensible language: you can change its syntax and add any feature you want.
 
+* Dynamic scoping
+* `LOOP`
+* `FORMAT`
+* Meta-programming
+* Domain Specific Languages
+* Clojure
+
+## Ruby
+
+More structured (but also more limited) than Common Lisp.
+
+* Meta-programming
 * Domain Specific Languages
 
 ## Prolog
@@ -115,6 +132,10 @@ Purely functional non-strict language. It's built on top of a strong mathematica
 foundation, making it very elegant. Tim Sweeney (main developer of the
 Unreal Engine) described his own idea of the "next mainstream programming language"
 as a variant on Haskell.
+
+## Oz
+
+* Dataflow variables.
 
 ## Theoretical Underpinnings (5%)
 
