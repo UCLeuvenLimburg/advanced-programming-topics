@@ -3,5 +3,6 @@ layout: default
 ---
 # Overview
 
-* [Functional Programming](functional-programming/index.md)
+* [Functional Programming](functional-programming)
+* [Language Features](language-features)
 * [Extra topics](topics.md)
