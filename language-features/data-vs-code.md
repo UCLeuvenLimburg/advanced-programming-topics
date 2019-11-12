@@ -18,3 +18,6 @@ layout: default
   * Ruby `rake`
   * Webpack
 * Example: factory functions instead of classes
+  * Factory design pattern
+  * Dependency injection
+  * Service providers
