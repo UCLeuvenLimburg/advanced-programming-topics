@@ -20,6 +20,9 @@ Use `IEnumerable` extension methods to solve the exercises. You can also rely on
 * `from x in xs select x * 2`
 * `xs.Where(x => x >= 0)`
 
+.NET can be picky when it comes to versions. You can either install the exact same version as I have,
+or you can modify the version yourself (e.g. by directly modifying the `Tests.csproj` file.)
+
 ## Python
 
 Open the file `tests.py` and write your solutions in the designated area at the top of the file.
