@@ -1,0 +1,154 @@
+testcase
+# Recipe ingredients
+2
+egg
+4
+flour
+250
+# Stock
+2
+egg
+4
+flour
+250
+# Expected
+true
+testcase
+# Recipe ingredients
+2
+egg
+4
+flour
+250
+# Stock
+2
+egg
+4
+flour
+250
+# Expected
+true
+testcase
+# Recipe ingredients
+2
+egg
+5
+flour
+250
+# Stock
+2
+egg
+6
+flour
+250
+# Expected
+true
+testcase
+# Recipe ingredients
+2
+egg
+5
+flour
+250
+# Stock
+2
+egg
+6
+flour
+300
+# Expected
+true
+testcase
+# Recipe ingredients
+2
+egg
+5
+flour
+300
+# Stock
+2
+egg
+6
+flour
+250
+# Expected
+false
+testcase
+# Recipe ingredients
+4
+egg
+5
+flour
+250
+butter
+300
+sugar
+250
+# Stock
+2
+egg
+6
+flour
+250
+# Expected
+false
+testcase
+# Recipe ingredients
+4
+egg
+5
+flour
+250
+butter
+300
+sugar
+250
+# Stock
+4
+egg
+6
+flour
+250
+butter
+500
+sugar
+1000
+# Expected
+true
+testcase
+# Recipe ingredients
+4
+egg
+5
+flour
+250
+butter
+300
+sugar
+250
+# Stock
+5
+egg
+6
+flour
+250
+butter
+500
+sugar
+1000
+vinegar
+100
+# Expected
+true
+testcase
+# Recipe ingredients
+1
+egg
+0
+# Stock
+1
+sugar
+100
+# Expected
+true
+eof

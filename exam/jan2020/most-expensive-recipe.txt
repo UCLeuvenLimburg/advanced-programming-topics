@@ -1,0 +1,151 @@
+testcase
+# Recipes
+1
+cake
+1
+egg
+1
+# Ingredient costs
+1
+egg
+1
+# Expected
+cake
+testcase
+# Recipes
+2
+cake
+1
+egg
+1
+pie
+1
+egg
+2
+# Ingredient costs
+1
+egg
+1
+# Expected
+pie
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+flour
+5
+pie
+2
+egg
+2
+flour
+3
+# Ingredient costs
+2
+egg
+4
+flour
+1
+# Expected
+pie
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+flour
+5
+pie
+2
+egg
+2
+flour
+3
+# Ingredient costs
+2
+egg
+4
+flour
+10
+# Expected
+cake
+testcase
+# Recipes
+3
+a
+3
+x
+1
+y
+2
+z
+3
+b
+3
+x
+2
+y
+2
+z
+2
+c
+3
+x
+3
+y
+2
+z
+1
+# Ingredient costs
+3
+x
+1
+y
+2
+z
+3
+# Expected
+a
+testcase
+# Recipes
+3
+a
+3
+x
+1
+y
+2
+z
+3
+b
+3
+x
+2
+y
+2
+z
+2
+c
+3
+x
+3
+y
+2
+z
+1
+# Ingredient costs
+3
+x
+5
+y
+2
+z
+3
+# Expected
+c
+eof

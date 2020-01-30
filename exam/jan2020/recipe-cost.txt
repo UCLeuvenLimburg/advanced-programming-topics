@@ -1,0 +1,110 @@
+testcase
+# Recipe ingredients
+1
+egg
+1
+# Ingredient costs
+1
+egg
+1
+# Expected
+1
+testcase
+# Recipe ingredients
+1
+egg
+2
+# Ingredient costs
+1
+egg
+1
+# Expected
+2
+testcase
+# Recipe ingredients
+1
+egg
+1
+# Ingredient costs
+1
+egg
+5
+# Expected
+5
+testcase
+# Recipe ingredients
+2
+egg
+1
+sugar
+100
+# Ingredient costs
+2
+egg
+5
+sugar
+1
+# Expected
+105
+testcase
+# Recipe ingredients
+2
+egg
+1
+sugar
+10
+# Ingredient costs
+2
+egg
+5
+sugar
+2
+# Expected
+25
+testcase
+# Recipe ingredients
+4
+egg
+1
+sugar
+10
+butter
+4
+flour
+2
+# Ingredient costs
+4
+egg
+5
+sugar
+2
+butter
+1
+flour
+8
+# Expected
+45
+testcase
+# Recipe ingredients
+4
+egg
+1
+sugar
+10
+butter
+4
+flour
+3
+# Ingredient costs
+4
+egg
+5
+sugar
+2
+butter
+1
+flour
+8
+# Expected
+53
+eof

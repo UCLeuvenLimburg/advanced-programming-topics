@@ -1,0 +1,353 @@
+testcase
+# Recipes
+1
+cake
+1
+egg
+1
+# Vegetarian ingredients
+0
+# Expected
+0
+testcase
+# Recipes
+1
+cake
+1
+egg
+1
+# Vegetarian ingredients
+1
+egg
+# Expected
+1
+cake
+testcase
+# Recipes
+2
+cake
+1
+egg
+1
+pie
+1
+egg
+1
+# Vegetarian ingredients
+1
+egg
+# Expected
+2
+cake
+pie
+testcase
+# Recipes
+2
+cake
+1
+egg
+1
+pie
+2
+egg
+1
+beef
+2
+# Vegetarian ingredients
+1
+egg
+# Expected
+1
+cake
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+carrot
+2
+pie
+2
+egg
+1
+beef
+2
+# Vegetarian ingredients
+1
+egg
+# Expected
+0
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+carrot
+2
+pie
+2
+egg
+1
+beef
+2
+# Vegetarian ingredients
+2
+egg
+carrot
+# Expected
+1
+cake
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+carrot
+2
+pie
+2
+egg
+1
+beef
+2
+# Vegetarian ingredients
+2
+egg
+carrot
+# Expected
+1
+cake
+testcase
+# Recipes
+6
+a
+1
+r
+1
+b
+2
+r
+1
+s
+2
+c
+1
+s
+2
+d
+2
+t
+1
+s
+2
+e
+2
+r
+1
+t
+2
+f
+3
+r
+1
+s
+2
+t
+5
+# Vegetarian ingredients
+2
+r
+s
+# Expected
+3
+a
+b
+c
+testcase
+# Recipes
+6
+a
+1
+r
+1
+b
+2
+r
+1
+s
+2
+c
+1
+s
+2
+d
+2
+t
+1
+s
+2
+e
+2
+r
+1
+t
+2
+f
+3
+r
+1
+s
+2
+t
+5
+# Vegetarian ingredients
+2
+t
+s
+# Expected
+2
+c
+d
+testcase
+# Recipes
+6
+a
+1
+r
+1
+b
+2
+r
+1
+s
+2
+c
+1
+s
+2
+d
+2
+t
+1
+s
+2
+e
+2
+r
+1
+t
+2
+f
+3
+r
+1
+s
+2
+t
+5
+# Vegetarian ingredients
+3
+r
+t
+s
+# Expected
+6
+a
+b
+c
+d
+e
+f
+testcase
+# Recipes
+6
+a
+1
+r
+1
+b
+2
+r
+1
+s
+2
+c
+1
+s
+2
+d
+2
+t
+1
+s
+2
+e
+2
+r
+1
+t
+2
+f
+3
+r
+1
+s
+2
+t
+5
+# Vegetarian ingredients
+1
+r
+# Expected
+1
+a
+testcase
+# Recipes
+6
+a
+1
+r
+1
+b
+2
+r
+1
+s
+2
+c
+1
+s
+2
+d
+2
+t
+1
+s
+2
+e
+2
+r
+1
+t
+2
+f
+3
+r
+1
+s
+2
+t
+5
+# Vegetarian ingredients
+1
+s
+# Expected
+1
+c
+eof

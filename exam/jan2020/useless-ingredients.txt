@@ -1,0 +1,169 @@
+testcase
+# Recipes
+0
+# Stock
+0
+# Expected
+0
+testcase
+# Recipes
+0
+# Stock
+1
+egg
+1
+# Expected
+1
+egg
+testcase
+# Recipes
+1
+cake
+1
+egg
+1
+# Stock
+1
+egg
+1
+# Expected
+0
+testcase
+# Recipes
+1
+cake
+1
+egg
+1
+# Stock
+2
+egg
+1
+sugar
+2
+# Expected
+1
+sugar
+testcase
+# Recipes
+1
+cake
+2
+egg
+1
+sugar
+2
+# Stock
+2
+egg
+1
+sugar
+2
+# Expected
+0
+testcase
+# Recipes
+1
+cake
+2
+egg
+1
+sugar
+2
+# Stock
+1
+egg
+1
+# Expected
+0
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+sugar
+2
+pie
+2
+flour
+2
+butter
+3
+# Stock
+1
+egg
+1
+# Expected
+0
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+sugar
+2
+pie
+2
+flour
+2
+butter
+3
+# Stock
+5
+egg
+1
+flour
+3
+vanilla
+8
+sugar
+1
+butter
+5
+# Expected
+1
+vanilla
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+sugar
+2
+pie
+2
+flour
+2
+butter
+3
+# Stock
+8
+egg
+1
+flour
+3
+vanilla
+8
+sugar
+1
+butter
+5
+pepper
+7
+salt
+3
+cowbell
+1
+# Expected
+4
+cowbell
+pepper
+salt
+vanilla
+eof

@@ -1,0 +1,105 @@
+testcase
+# Recipes
+1
+cake
+1
+egg
+1
+# Expected
+egg
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+sugar
+1
+pie
+1
+egg
+1
+# Expected
+egg
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+sugar
+5
+pie
+1
+egg
+1
+# Expected
+egg
+testcase
+# Recipes
+2
+cake
+2
+egg
+1
+sugar
+5
+pie
+1
+egg
+1
+# Expected
+egg
+testcase
+# Recipes
+3
+cake
+2
+egg
+1
+sugar
+5
+pie
+1
+egg
+1
+pasta
+1
+egg
+1
+# Expected
+egg
+testcase
+# Recipes
+4
+cake
+3
+egg
+1
+sugar
+5
+flour
+10
+pie
+2
+egg
+1
+flour
+10
+pasta
+2
+egg
+1
+flour
+10
+roux
+2
+flour
+10
+butter
+1
+# Expected
+flour
+eof
